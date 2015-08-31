@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://wadl.dev.java.net/2009/02">
+  <doc xml:lang="en" title="Bungie.net"/>
+  <resources base="https://www.bungie.net/Platform/Destiny/">
+    <resource path="{membershipType}/Account/{destinyMembershipId}" id="Account">
+      <doc xml:lang="en" title="Account"/>
+      <param name="membershipType" default="membershipType" type="xs:int" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <doc xml:lang="en" title="membershipType Parameter">A valid non-BungieNet membership type.</doc>
+      </param>
+      <param name="destinyMembershipId" default="destinyMembershipId" type="xs:positiveInteger" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <doc xml:lang="en" title="destinyMembershipId Parameter">Destiny membership ID.</doc>
+      </param>
+      <param name="definitions" type="xs:boolean" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <doc xml:lang="en" title="definitions Parameter">If False, will not return definition information.</doc>
+      </param>
+      <resource path="Character/{characterId}" id="Character summary">
+        <doc xml:lang="en" title="Character summary">Returns a character summary for the supplied membership.</doc>
+        <param name="characterId" default="characterId" type="xs:positiveInteger" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="characterId Parameter">ID of the character.</doc>
+        </param>
+        <resource path="Progression" id="Progression">
+          <doc xml:lang="en" title="Progression"/>
+          <method name="GET" id="GetCharacterProgression">
+            <doc xml:lang="en" title="GetCharacterProgression">Provides the progression details for the supplied character.</doc>
+            <request/>
+          </method>
+        </resource>
+        <resource path="Inventory" id="Inventory">
+          <doc xml:lang="en" title="Inventory"/>
+          <resource path="{itemInstanceId}" id="Item details">
+            <doc xml:lang="en" title="Item details"/>
+            <param name="itemInstanceId" default="itemInstanceId" type="xs:integer" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+              <doc xml:lang="en" title="itemInstanceId Parameter">The Instance ID of the destiny item. Not the Reference ID, pay attention.</doc>
+            </param>
+            <method name="GET" id="GetItemDetail">
+              <doc xml:lang="en" title="GetItemDetail">Retrieve the details of a Destiny Item.</doc>
+              <request/>
+            </method>
+          </resource>
+          <method name="GET" id="GetCharacterInventory">
+            <doc xml:lang="en" title="GetCharacterInventory">Returns the inventory for the supplied character.</doc>
+            <request/>
+          </method>
+        </resource>
+        <resource path="Activities" id="Activities">
+          <doc xml:lang="en" title="Activities"/>
+          <method name="GET" id="GetCharacterActivities">
+            <doc xml:lang="en" title="GetCharacterActivities">Retrieve the activity for the supplied character.</doc>
+            <request/>
+            <response status="200">
+              <representation mediaType="application/json; charset=utf-8" element="des:Response" xmlns:des="https://www.bungie.net/Platform/Destiny/"/>
+            </response>
+            <response status="404">
+              <representation mediaType="text/html; charset=UTF-8" element="html"/>
+            </response>
+          </method>
+        </resource>
+        <method name="GET" id="GetCharacterSummary">
+          <doc xml:lang="en" title="GetCharacterSummary"/>
+          <request/>
+        </method>
+      </resource>
+      <resource path="Summary" id="Account summary">
+        <doc xml:lang="en" title="Account summary"/>
+        <method name="GET" id="GetDestinyAccountSummary">
+          <doc xml:lang="en" title="GetDestinyAccountSummary">Returns Destiny account summary information for the supplied membership.</doc>
+          <request/>
+        </method>
+      </resource>
+      <resource path="Triumphs" id="Triumphs">
+        <doc xml:lang="en" title="Triumphs"/>
+        <param name="definitions" type="xs:boolean" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <method name="GET" id="GetTriumphs">
+          <doc xml:lang="en" title="GetTriumphs">Provides Triumphs for a given Destiny account.</doc>
+          <request/>
+          <response status="200">
+            <representation mediaType="application/json; charset=utf-8" element="des:Response" xmlns:des="https://www.bungie.net/Platform/Destiny/"/>
+          </response>
+          <response status="404">
+            <representation mediaType="text/html; charset=UTF-8" element="html"/>
+          </response>
+        </method>
+      </resource>
+      <method name="GET" id="GetAccount">
+        <doc xml:lang="en" title="GetAccount">Returns Destiny account information for the supplied membership.</doc>
+        <request/>
+        <response status="200">
+          <representation mediaType="application/json; charset=utf-8"/>
+        </response>
+        <response status="404">
+          <representation mediaType="text/html; charset=UTF-8"/>
+        </response>
+      </method>
+    </resource>
+    <resource path="Explorer" id="Explorer">
+      <doc xml:lang="en" title="Explorer"/>
+      <resource path="Items" id="Items">
+        <doc xml:lang="en" title="Items"/>
+        <param name="count" default="500" type="xs:int" required="true" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="count Parameter">Number of rows to return.</doc>
+          <option value="10"/>
+          <option value="25"/>
+          <option value="50"/>
+          <option value="100"/>
+          <option value="500"/>
+        </param>
+        <param name="page" default="0" type="xs:int" required="true" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="page Parameter">Page number to return, starting with 0.</doc>
+        </param>
+        <param name="name" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="name Parameter">Name of items to return (partial match, no case). Omit for all items.</doc>
+        </param>
+        <param name="order" default="Name" type="xs:string" required="true" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="order Parameter">Item property used for sorting.</doc>
+          <option value="Name"/>
+          <option value="ItemType"/>
+          <option value="Rarity"/>
+          <option value="ItemTypeName"/>
+          <option value="ItemStatHash"/>
+          <option value="MinimumRequiredLevel"/>
+          <option value="MaximumRequiredLevel"/>
+        </param>
+        <param name="orderstathash" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="orderstathash Parameter">This value is used when the order parameter is set to ItemStatHash. The item stat for the provided hash value will be used in the sort.</doc>
+        </param>
+        <param name="direction" type="xs:string" required="true" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <option value="Ascending"/>
+          <option value="Descending"/>
+        </param>
+        <param name="definitions" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="definitions Parameter">Indicates the item definitions should be returned with item hash results.</doc>
+        </param>
+        <param name="step" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="step Parameter">Hash ID of the talent node step that an item must have in order to be returned.</doc>
+        </param>
+        <param name="categories" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="categories Parameter">Category identifiers. Only items that are in all of the passed-in categories will be returned.</doc>
+        </param>
+        <param name="rarity" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="rarity Parameter">Rarity of items to return. Omit for all items.</doc>
+          <option value="Currency"/>
+          <option value="Basic"/>
+          <option value="Common"/>
+          <option value="Rare"/>
+          <option value="Superior"/>
+          <option value="Exotic"/>
+        </param>
+        <param name="weaponPerformance" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="weaponPerformance Parameter">Items must have node steps in one of these categories, omit for all items.</doc>
+          <option value="RateOfFire"/>
+          <option value="Damage"/>
+          <option value="Accuracy"/>
+          <option value="Range"/>
+          <option value="Zoom"/>
+          <option value="Recoil"/>
+          <option value="Ready"/>
+          <option value="Reload"/>
+          <option value="HairTrigger"/>
+          <option value="AmmoAndMagazine"/>
+          <option value="TrackingAndDetonation"/>
+          <option value="ShotgunSpread"/>
+          <option value="ChargeTime"/>
+        </param>
+        <param name="impactEffects" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="impactEffects Parameter">Items must have node steps in one of these categories, omit for all items.</doc>
+          <option value="ArmorPiercing"/>
+          <option value="Ricochet"/>
+          <option value="Flinch"/>
+          <option value="CollateralDamage"/>
+          <option value="Disorient"/>
+          <option value="HighlightTarget"/>
+        </param>
+        <param name="guardianAttributes" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="guardianAttributes Parameter">Items must have node steps in one of these categories, omit for all items.</doc>
+          <option value="Stats"/>
+          <option value="Shields"/>
+          <option value="Health"/>
+          <option value="Revive"/>
+          <option value="AimUnderFire"/>
+          <option value="Radar"/>
+          <option value="Invisibility"/>
+          <option value="Reputations"/>
+        </param>
+        <param name="lightAbilities" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="lightAbilities Parameter">Items must have node steps in one of these categories, omit for all items.</doc>
+          <option value="Grenades"/>
+          <option value="Melee"/>
+          <option value="MovementModes"/>
+          <option value="Orbs"/>
+          <option value="SuperEnergy"/>
+          <option value="SuperMods"/>
+        </param>
+        <param name="damageTypes" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="damageTypes Parameter">Items must have node steps in one of these categories, omit for all items.</doc>
+          <option value="Kinetic"/>
+          <option value="Arc"/>
+          <option value="Solar"/>
+          <option value="Void"/>
+        </param>
+        <param name="sourcecat" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="sourcecat Parameter">Items must drop from the specified source category, omit for all items.</doc>
+          <option value="Vendor"/>
+          <option value="Activity"/>
+        </param>
+        <param name="sourcehash" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="sourcehash Parameter">Items must drop from the specified source, omit for all items. Overrides sourcecat.</doc>
+        </param>
+        <param name="matchrandomsteps" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="matchrandomsteps Parameter">True if the supplied groups/step hash filters should match random node steps. False indicates the item can always get the step before it is considered a match.</doc>
+        </param>
+        <method name="GET" id="GetDestinyExplorerItems">
+          <doc xml:lang="en" title="GetDestinyExplorerItems">Gets a page list of Destiny items.</doc>
+          <request/>
+          <response status="200">
+            <representation mediaType="application/json; charset=utf-8" element="des:Response" xmlns:des="https://www.bungie.net/Platform/Destiny/"/>
+          </response>
+          <response status="404">
+            <representation mediaType="text/html" element="html"/>
+          </response>
+        </method>
+      </resource>
+      <resource path="TalentNodeSteps" id="TalentNodeSteps">
+        <doc xml:lang="en" title="TalentNodeSteps"/>
+        <param name="guardianAttributes" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="guardianAttributes Parameter">Node steps in one of these categories, omit for all steps.</doc>
+          <option value="Stats"/>
+          <option value="Shields"/>
+          <option value="Health"/>
+          <option value="Revive"/>
+          <option value="AimUnderFire"/>
+          <option value="Radar"/>
+          <option value="Invisibility"/>
+          <option value="Reputations"/>
+        </param>
+        <param name="count" type="xs:int" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="count Parameter">Number of rows to return.</doc>
+          <option value="10"/>
+          <option value="25"/>
+          <option value="50"/>
+          <option value="100"/>
+          <option value="500"/>
+        </param>
+        <param name="direction" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="direction Parameter">Order to sort steps (by name).</doc>
+          <option value="Ascending"/>
+          <option value="Descending"/>
+        </param>
+        <param name="impactEffects" type="xs:anySimpleType" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="impactEffects Parameter">Node steps in one of these categories, omit for all steps.</doc>
+          <option value="ArmorPiercing"/>
+          <option value="Ricochet"/>
+          <option value="Flinch"/>
+          <option value="CollateralDamage"/>
+          <option value="Disorient"/>
+          <option value="HighlightTarget"/>
+        </param>
+        <param name="definitions" type="xs:boolean" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="definitions Parameter">Indicates the step definitions should be returned with item hash results.</doc>
+        </param>
+        <param name="page" type="xs:nonNegativeInteger" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="page Parameter">Page number to return, starting with 0.</doc>
+        </param>
+        <param name="name" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <param name="lightAbilities" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <param name="weaponPerformance" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <param name="damageTypes" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema"/>
+        <method name="GET" id="GetDestinyExplorerTalentNodeSteps">
+          <doc xml:lang="en" title="GetDestinyExplorerTalentNodeSteps">Gets a page list of Destiny talent node steps, ordered by the step name.</doc>
+          <request/>
+          <response status="200">
+            <representation mediaType="application/json; charset=utf-8" element="des:Response" xmlns:des="https://www.bungie.net/Platform/Destiny/"/>
+          </response>
+          <response status="404">
+            <representation mediaType="text/html" element="html"/>
+          </response>
+        </method>
+      </resource>
+    </resource>
+    <resource path="Manifest" id="Manifest">
+      <doc xml:lang="en" title="Manifest"/>
+      <resource path="{type}/{id}" id="Manifest item">
+        <doc xml:lang="en" title="Manifest item"/>
+        <param name="type" default="type" type="xs:string" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="type Parameter">The type of definition to return.</doc>
+        </param>
+        <param name="id" default="id" type="xs:integer" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="id Parameter">The hash ID of the definition instance.</doc>
+        </param>
+        <method name="GET" id="GetDestinySingleDefinition">
+          <doc xml:lang="en" title="GetDestinySingleDefinition">Returns the specific item from the current manifest a json object.</doc>
+          <request>
+            <param name="definitions" type="xs:boolean" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+              <doc xml:lang="en" title="definitions Parameter">If true, related definitions will be returned.</doc>
+            </param>
+          </request>
+          <response status="200">
+            <representation mediaType="application/json; charset=utf-8" element="des:Response" xmlns:des="https://www.bungie.net/Platform/Destiny/"/>
+          </response>
+          <response status="404">
+            <representation mediaType="text/html" element="html"/>
+          </response>
+        </method>
+      </resource>
+      <method name="GET" id="GetDestinyManifest">
+        <doc xml:lang="en" title="GetDestinyManifest">Returns the current version of the manifest as a json object.</doc>
+        <request/>
+        <response status="200">
+          <representation mediaType="application/json; charset=utf-8"/>
+        </response>
+        <response status="404">
+          <representation mediaType="text/html"/>
+        </response>
+      </method>
+    </resource>
+    <resource path="SearchDestinyPlayer/{membershipType}/{displayName}" id="Search player">
+      <doc xml:lang="en" title="Search player"/>
+      <param name="membershipType" default="membershipType" type="xs:string" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <doc xml:lang="en" title="membershipType Parameter">A valid non-BungieNet membership type, or All.</doc>
+      </param>
+      <param name="displayName" default="displayName" type="xs:string" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <doc xml:lang="en" title="displayName Parameter">The full gamertag or PSN id of the player. Spaces and case are ignored.</doc>
+      </param>
+      <method name="GET" id="SearchDestinyPlayer">
+        <doc xml:lang="en" title="SearchDestinyPlayer">Returns a list of Destiny memberships given a full Gamertag or PSN ID.</doc>
+        <request/>
+        <response status="200">
+          <representation mediaType="application/json; charset=utf-8"/>
+        </response>
+        <response status="404">
+          <representation mediaType="text/html; charset=UTF-8"/>
+        </response>
+      </method>
+    </resource>
+    <resource path="Stats" id="Statistics">
+      <doc xml:lang="en" title="Statistics"/>
+      <resource path="Definition" id="Definition">
+        <doc xml:lang="en" title="Definition"/>
+        <method name="GET" id="GetHistoricalStatsDefinition">
+          <doc xml:lang="en" title="GetHistoricalStatsDefinition">Gets historical stats definitions.</doc>
+          <request/>
+          <response status="200">
+            <representation mediaType="application/json; charset=utf-8" element="des:Response" xmlns:des="https://www.bungie.net/Platform/Destiny/"/>
+          </response>
+          <response status="404">
+            <representation mediaType="text/html" element="html"/>
+          </response>
+        </method>
+      </resource>
+      <resource path="Account/{membershipType}/{destinyMembershipId}" id="Historical stats for account">
+        <doc xml:lang="en" title="Historical stats for account"/>
+        <param name="membershipType" default="membershipType" type="xs:int" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="membershipType Parameter">A valid non-BungieNet membership type.</doc>
+        </param>
+        <param name="destinyMembershipId" default="destinyMembershipId" type="xs:positiveInteger" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="destinyMembershipId Parameter">The Destiny membershipId of the user to retrieve.</doc>
+        </param>
+        <method name="GET" id="GetHistoricalStatsForAccount">
+          <doc xml:lang="en" title="GetHistoricalStatsForAccount">Gets aggregate historical stats organized around each character for a given account.</doc>
+          <request>
+            <param name="groups" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+              <doc xml:lang="en" title="groups Parameter">Groups of stats to include, otherwise only general stats are returned. Comma separated list is allowed.</doc>
+              <option value="General"/>
+              <option value="Weapons"/>
+              <option value="Medals"/>
+              <option value="Enemies"/>
+            </param>
+          </request>
+          <response status="200">
+            <representation mediaType="application/json; charset=utf-8" element="des:Response" xmlns:des="https://www.bungie.net/Platform/Destiny/"/>
+          </response>
+          <response status="404">
+            <representation mediaType="text/html" element="html"/>
+          </response>
+        </method>
+      </resource>
+      <resource path="{membershipType}/{destinyMembershipId}/{characterId}" id="Historical stats for character">
+        <doc xml:lang="en" title="Historical stats for character"/>
+        <param name="membershipType" default="membershipType" type="xs:string" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="membershipType Parameter">A valid non-BungieNet membership type.</doc>
+        </param>
+        <param name="destinyMembershipId" default="destinyMembershipId" type="xs:string" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="destinyMembershipId Parameter">The Destiny membershipId of the user to retrieve.</doc>
+        </param>
+        <param name="characterId" default="characterId" type="xs:string" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="characterId Parameter">The id of the character to retrieve. You can omit this character ID or set it to 0 to get aggregate stats across all characters.</doc>
+        </param>
+        <method name="GET" id="GetHistoricalStats">
+          <doc xml:lang="en" title="GetHistoricalStats">Gets historical stats for indicated character.</doc>
+          <request>
+            <param name="periodType" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+              <doc xml:lang="en" title="periodType Parameter">Indicates a specific period type to return. Optional.</doc>
+              <option value="Daily"/>
+              <option value="Monthly"/>
+              <option value="AllTime"/>
+              <option value="Activity"/>
+            </param>
+            <param name="modes" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+              <doc xml:lang="en" title="modes Parameter">Game modes to return.</doc>
+              <option value=""/>
+              <option value="None"/>
+              <option value="Story"/>
+              <option value="Strike"/>
+              <option value="Raid"/>
+              <option value="AllPvP"/>
+              <option value="Patrol"/>
+              <option value="AllPvE"/>
+              <option value="PvPIntroduction"/>
+              <option value="ThreeVsThree"/>
+              <option value="Control"/>
+              <option value="Lockdown"/>
+              <option value="Team"/>
+              <option value="FreeForAll"/>
+              <option value="Nightfall"/>
+              <option value="Heroic"/>
+              <option value="AllStrikes"/>
+              <option value="IronBanner"/>
+              <option value="IronBanner"/>
+              <option value="Arena"/>
+              <option value="ArenaChallenge"/>
+              <option value="TrialsOfOsiris"/>
+              <option value="Elimination"/>
+            </param>
+            <param name="monthstart" type="xs:gYearMonth" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+              <doc xml:lang="en" title="monthstart Parameter">First month to return when monthly stats are requested. Use the format YYYY-MM.</doc>
+            </param>
+            <param name="monthend" type="xs:gYearMonth" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+              <doc xml:lang="en" title="monthend Parameter">Last month to return when monthly stats are requested. Use the format YYYY-MM.</doc>
+            </param>
+            <param name="dayend" type="xs:date" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+              <doc xml:lang="en" title="dayend Parameter">Last day to return when daily stats are requested. Use the format YYYY-MM-DD.</doc>
+            </param>
+            <param name="daystart" type="xs:date" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+              <doc xml:lang="en" title="daystart Parameter">First day to return when daily stats are requested. Use the format YYYY-MM-DD</doc>
+            </param>
+            <param name="groups" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+              <doc xml:lang="en" title="groups Parameter">Group of stats to include, otherwise only general stats are returned. Comma separated list is allowed.</doc>
+              <option value="General"/>
+              <option value="Weapons"/>
+              <option value="Medals"/>
+              <option value="Enemies"/>
+            </param>
+          </request>
+          <response status="200">
+            <representation mediaType="application/json; charset=utf-8" element="des:Response" xmlns:des="https://www.bungie.net/Platform/Destiny/"/>
+          </response>
+          <response status="404">
+            <representation mediaType="text/html; charset=UTF-8" element="html"/>
+          </response>
+        </method>
+      </resource>
+      <resource path="AggregateActivityStats/{membershipType}/{destinyMembershipId}/{characterId}" id="Aggregate activities">
+        <doc xml:lang="en" title="Aggregate activities"/>
+        <param name="membershipType" default="membershipType" type="xs:int" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="membershipType Parameter">A valid non-BungieNet membership type.</doc>
+        </param>
+        <param name="destinyMembershipId" default="destinyMembershipId" type="xs:positiveInteger" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="destinyMembershipId Parameter">The Destiny membershipId of the user to retrieve.</doc>
+        </param>
+        <param name="characterId" default="characterId" type="xs:positiveInteger" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="characterId Parameter">The specific character whose activities should be returned.</doc>
+        </param>
+        <method name="GET" id="GetDestinyAggregateActivityStats">
+          <doc xml:lang="en" title="GetDestinyAggregateActivityStats">Gets all activities the character has participated in together with aggregate statistics for those activities.</doc>
+          <request>
+            <param name="definitions" type="xs:boolean" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+              <doc xml:lang="en" title="definitions Parameter">Client would like activity definition returned in response.</doc>
+            </param>
+          </request>
+          <response status="200">
+            <representation mediaType="application/json; charset=utf-8" element="des:Response" xmlns:des="https://www.bungie.net/Platform/Destiny/"/>
+          </response>
+          <response status="404">
+            <representation mediaType="text/html; charset=UTF-8" element="html"/>
+          </response>
+        </method>
+      </resource>
+      <resource path="ActivityHistory/{membershipType}/{destinyMembershipId}/{characterId}" id="Activity history">
+        <doc xml:lang="en" title="Activity history"/>
+        <param name="membershipType" default="membershipType" type="xs:int" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="membershipType Parameter">A valid non-BungieNet membership type.</doc>
+        </param>
+        <param name="destinyMembershipId" default="destinyMembershipId" type="xs:positiveInteger" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="destinyMembershipId Parameter">The Destiny membershipId of the user to retrieve.</doc>
+        </param>
+        <param name="characterId" default="characterId" type="xs:positiveInteger" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="characterId Parameter">The id of the character to retrieve.</doc>
+        </param>
+        <method name="GET" id="GetActivityHistory">
+          <doc xml:lang="en" title="GetActivityHistory">Gets activity history stats for indicated character.</doc>
+          <request>
+            <param name="definitions" type="xs:boolean" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+              <doc xml:lang="en" title="definitions Parameter">True if activity definitions should be returned in response.</doc>
+            </param>
+            <param name="mode" type="xs:string" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+              <doc xml:lang="en" title="mode Parameter">A filter for the activity mode to be returned. None returns all activities.</doc>
+              <option value="None"/>
+              <option value="Story"/>
+              <option value="Strike"/>
+              <option value="Raid"/>
+              <option value="AllPvP"/>
+              <option value="Patrol"/>
+              <option value="AllPvE"/>
+              <option value="PvPIntroduction"/>
+              <option value="ThreeVsThree"/>
+              <option value="Control"/>
+              <option value="Lockdown"/>
+              <option value="Team"/>
+              <option value="FreeForAll"/>
+              <option value="Nightfall"/>
+              <option value="Heroic"/>
+              <option value="AllStrikes"/>
+              <option value="IronBanner"/>
+              <option value="AllArena"/>
+              <option value="Arena"/>
+              <option value="ArenaChallenge"/>
+              <option value="TrialsOfOsiris"/>
+              <option value="Elimination"/>
+            </param>
+            <param name="page" type="xs:nonNegativeInteger" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+              <doc xml:lang="en" title="page Parameter">Page number to return, starting with 0.</doc>
+            </param>
+            <param name="count" type="xs:int" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+              <doc xml:lang="en" title="count Parameter">Number of rows to return</doc>
+            </param>
+          </request>
+          <response status="200">
+            <representation mediaType="application/json; charset=utf-8" element="des:Response" xmlns:des="https://www.bungie.net/Platform/Destiny/"/>
+          </response>
+          <response status="404">
+            <representation mediaType="text/html; charset=UTF-8" element="html"/>
+          </response>
+        </method>
+      </resource>
+      <resource path="PostGameCarnageReport/{activityId}" id="Post-game carnage report">
+        <doc xml:lang="en" title="Post-game carnage report"/>
+        <param name="activityId" default="activityId" type="xs:integer" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="activityId Parameter">The ID of the activity whose PGCR is requested.</doc>
+        </param>
+        <method name="GET" id="GetPostGameCarnageReport">
+          <doc xml:lang="en" title="GetPostGameCarnageReport">Gets the available post game carnage report for the activity ID.</doc>
+          <request>
+            <param name="definitions" type="xs:boolean" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+              <doc xml:lang="en" title="definitions Parameter">Client would like activity and weapon definitions returned in response.</doc>
+            </param>
+          </request>
+        </method>
+      </resource>
+      <resource path="UniqueWeapons/{membershipType}/{destinyMembershipId}/{characterId}" id="Unique weapons">
+        <doc xml:lang="en" title="Unique weapons"/>
+        <param name="membershipType" default="membershipType" type="xs:int" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="membershipType Parameter">A valid non-BungieNet membership type.</doc>
+        </param>
+        <param name="destinyMembershipId" default="destinyMembershipId" type="xs:positiveInteger" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="destinyMembershipId Parameter">The Destiny membershipId of the user to retrieve.</doc>
+        </param>
+        <param name="characterId" default="characterId" type="xs:positiveInteger" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="characterId Parameter">The id of the character to retrieve.</doc>
+        </param>
+        <method name="GET" id="GetUniqueWeaponHistory">
+          <doc xml:lang="en" title="GetUniqueWeaponHistory">Gets details about unique weapon usage, including all exotic weapons.</doc>
+          <request>
+            <param name="definitions" type="xs:boolean" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+              <doc xml:lang="en" title="definitions Parameter">True if item definitions should be returned in response.</doc>
+            </param>
+          </request>
+        </method>
+      </resource>
+    </resource>
+    <resource path="Vanguard/Grimoire" id="Grimoire">
+      <doc xml:lang="en" title="Grimoire"/>
+      <resource path="{membershipType}/{membershipId}" id="Member grimoire">
+        <doc xml:lang="en" title="Member grimoire"/>
+        <param name="membershipType" default="membershipType" type="xs:int" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="membershipType Parameter">A valid membership type.</doc>
+        </param>
+        <param name="membershipId" default="membershipId" type="xs:integer" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="membershipId Parameter">The membershipId of the user to retrieve.</doc>
+        </param>
+        <param name="flavour" type="xs:boolean" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="flavour Parameter">Indicates flavour stats should be included with player card data.</doc>
+        </param>
+        <param name="definitions" type="xs:boolean" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="definitions Parameter">Indicates the card definition should be returned when player data.</doc>
+        </param>
+        <param name="single" type="xs:boolean" required="false" default="" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+          <doc xml:lang="en" title="single Parameter">Indicates data for a single card should be returned.</doc>
+        </param>
+        <method name="GET" id="GetGrimoireByMembership">
+          <doc xml:lang="en" title="GetGrimoireByMembership">Gets someone else's Grimoire.</doc>
+          <request/>
+          <response status="200">
+            <representation mediaType="application/json; charset=utf-8" element="des:Response" xmlns:des="https://www.bungie.net/Platform/Destiny/"/>
+          </response>
+          <response status="404">
+            <representation mediaType="text/html; charset=UTF-8" element="html"/>
+          </response>
+        </method>
+      </resource>
+      <resource path="Definition" id="Grimoire definitions">
+        <doc xml:lang="en" title="Grimoire definitions"/>
+        <method name="GET" id="GetGrimoireDefinition">
+          <doc xml:lang="en" title="GetGrimoireDefinition">Gets Grimoire definitions.</doc>
+          <request/>
+          <response status="200">
+            <representation mediaType="application/json; charset=utf-8" element="def:Response" xmlns:def="http://www.bungie.net/Platform/Destiny/Vanguard/Grimoire/Definition/"/>
+          </response>
+          <response status="404">
+            <representation mediaType="text/html; charset=UTF-8" element="html"/>
+          </response>
+        </method>
+      </resource>
+    </resource>
+    <resource path="{membershipType}/Stats/GetMembershipIdByDisplayName/{displayName}/" id="Membership ID">
+      <doc xml:lang="en" title="Membership ID"/>
+      <param name="membershipType" default="membershipType" type="xs:int" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <doc xml:lang="en" title="membershipType Parameter">A valid non-BungieNet membership type.</doc>
+      </param>
+      <param name="displayName" default="displayName" type="xs:string" required="true" style="template" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <doc xml:lang="en" title="displayName Parameter">A display name meeting the parameters of display names for the specified membership type (i.e., a gamertag, or a PSN Id)</doc>
+      </param>
+      <method name="GET" id="GetMembershipIdByDisplayName">
+        <doc xml:lang="en" title="GetMembershipIdByDisplayName">Returns the numerical id of a player based on their display name, zero if not found.</doc>
+        <request>
+          <param name="ignorecase" default="true" type="xs:boolean" required="false" style="query" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+            <doc xml:lang="en" title="ignorecase Parameter">Default is false when not specified. True to cause a caseless search to be used.</doc>
+          </param>
+        </request>
+        <response status="200">
+          <representation mediaType="application/json; charset=utf-8"/>
+        </response>
+        <response status="404">
+          <representation mediaType="text/html; charset=UTF-8"/>
+        </response>
+      </method>
+    </resource>
+  </resources>
+</application>

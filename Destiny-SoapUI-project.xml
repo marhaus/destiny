@@ -1,0 +1,2623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="9a3d6075-a5ae-4ff9-a128-352bb1356ef1" activeEnvironment="Default" name="Destiny REST Project" resourceRoot="" soapui-version="5.2.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config">
+	<con:settings>
+		<con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[
+<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="TestSuite" value="Statistics"/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="Save Project" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="TestCase" value="Average kill distance"/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+</xml-fragment>]]></con:setting>
+	</con:settings>
+	<con:interface xsi:type="con:RestService" id="4cd20ac0-56b8-411d-a432-d5d198127bf3" wadlVersion="http://wadl.dev.java.net/2009/02" name="Bungie.net" type="rest" basePath="/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<con:settings/>
+		<con:definitionCache type="TEXT" rootPart=""/>
+		<con:endpoints>
+			<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+		</con:endpoints>
+		<con:resource name="Account" path="{membershipType}/Account/{destinyMembershipId}" id="bc2450aa-e925-4f3b-99a5-8e86bc4c9f58">
+			<con:description/>
+			<con:settings/>
+			<con:parameters>
+				<con:parameter required="true">
+					<con:name>membershipType</con:name>
+					<con:value>membershipType</con:value>
+					<con:style>TEMPLATE</con:style>
+					<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+					<con:default>membershipType</con:default>
+					<con:path xsi:nil="true"/>
+					<con:description>A valid non-BungieNet membership type.</con:description>
+				</con:parameter>
+				<con:parameter required="true">
+					<con:name>destinyMembershipId</con:name>
+					<con:value>destinyMembershipId</con:value>
+					<con:style>TEMPLATE</con:style>
+					<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:positiveInteger</con:type>
+					<con:default>destinyMembershipId</con:default>
+					<con:path xsi:nil="true"/>
+					<con:description>Destiny membership ID.</con:description>
+				</con:parameter>
+				<con:parameter>
+					<con:name>definitions</con:name>
+					<con:value/>
+					<con:style>QUERY</con:style>
+					<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:boolean</con:type>
+					<con:default/>
+					<con:description>If False, will not return definition information.</con:description>
+				</con:parameter>
+			</con:parameters>
+			<con:resource name="Character summary" path="Character/{characterId}" id="90d1c104-efba-4ac9-9abb-09c4ad0a7589">
+				<con:description>Returns a character summary for the supplied membership.</con:description>
+				<con:settings/>
+				<con:parameters>
+					<con:parameter required="true">
+						<con:name>characterId</con:name>
+						<con:value>characterId</con:value>
+						<con:style>TEMPLATE</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:positiveInteger</con:type>
+						<con:default>characterId</con:default>
+						<con:description>ID of the character.</con:description>
+					</con:parameter>
+				</con:parameters>
+				<con:resource name="Progression" path="Progression" id="1a89bee6-69f7-4041-a180-70255ac423a1">
+					<con:description/>
+					<con:settings/>
+					<con:parameters/>
+					<con:method name="GetCharacterProgression" id="393c5c6a-fc50-40c3-b185-c2d48510491c" method="GET">
+						<con:description>Provides the progression details for the supplied character.</con:description>
+						<con:settings/>
+						<con:parameters/>
+						<con:request name="GetCharacterProgression" id="a3562356-8797-43c8-a65d-4db9819a97c6" mediaType="application/json">
+							<con:settings>
+								<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+							</con:settings>
+							<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+							<con:request/>
+							<con:credentials>
+								<con:username xsi:nil="true"/>
+								<con:password xsi:nil="true"/>
+								<con:domain xsi:nil="true"/>
+								<con:authType>No Authorization</con:authType>
+							</con:credentials>
+							<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+							<con:jmsPropertyConfig/>
+							<con:parameters>
+								<con:entry key="membershipType" value="2"/>
+								<con:entry key="definitions" value="false"/>
+							</con:parameters>
+							<con:parameterOrder>
+								<con:entry>destinyMembershipId</con:entry>
+								<con:entry>membershipType</con:entry>
+								<con:entry>characterId</con:entry>
+								<con:entry>definitions</con:entry>
+							</con:parameterOrder>
+						</con:request>
+						<con:request name="GetCharacterProgression (with definitions)" id="a3562356-8797-43c8-a65d-4db9819a97c6" mediaType="application/json">
+							<con:settings>
+								<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+							</con:settings>
+							<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+							<con:request/>
+							<con:credentials>
+								<con:username xsi:nil="true"/>
+								<con:password xsi:nil="true"/>
+								<con:domain xsi:nil="true"/>
+								<con:authType>No Authorization</con:authType>
+							</con:credentials>
+							<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+							<con:jmsPropertyConfig/>
+							<con:parameters>
+								<con:entry key="membershipType" value="2"/>
+								<con:entry key="definitions" value="true"/>
+							</con:parameters>
+							<con:parameterOrder>
+								<con:entry>destinyMembershipId</con:entry>
+								<con:entry>membershipType</con:entry>
+								<con:entry>characterId</con:entry>
+								<con:entry>definitions</con:entry>
+							</con:parameterOrder>
+						</con:request>
+					</con:method>
+				</con:resource>
+				<con:resource name="Inventory" path="Inventory" id="aaa0fdc6-a37e-4793-a16e-d517d05d704b">
+					<con:description/>
+					<con:settings/>
+					<con:parameters/>
+					<con:resource name="Item details" path="{itemInstanceId}" id="a38a0a65-09b8-4889-8e40-6ce692935935">
+						<con:description/>
+						<con:settings/>
+						<con:parameters>
+							<con:parameter required="true">
+								<con:name>itemInstanceId</con:name>
+								<con:value>itemInstanceId</con:value>
+								<con:style>TEMPLATE</con:style>
+								<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:integer</con:type>
+								<con:default>itemInstanceId</con:default>
+								<con:description>The Instance ID of the destiny item. Not the Reference ID, pay attention.</con:description>
+							</con:parameter>
+						</con:parameters>
+						<con:method name="GetItemDetail" id="fcc1e07c-e89a-4169-8a41-1c0cd422ae80" method="GET">
+							<con:description>Retrieve the details of a Destiny Item.</con:description>
+							<con:settings/>
+							<con:parameters/>
+							<con:request name="GetItemDetail" id="329a4c35-f34c-4b0e-966d-71e3762858d5" mediaType="application/json">
+								<con:settings>
+									<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+								</con:settings>
+								<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+								<con:request/>
+								<con:credentials>
+									<con:username xsi:nil="true"/>
+									<con:password xsi:nil="true"/>
+									<con:domain xsi:nil="true"/>
+									<con:authType>No Authorization</con:authType>
+								</con:credentials>
+								<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+								<con:jmsPropertyConfig/>
+								<con:parameters>
+									<entry key="definitions" value="false" xmlns="http://eviware.com/soapui/config"/>
+								</con:parameters>
+								<con:parameterOrder>
+									<con:entry>membershipType</con:entry>
+									<con:entry>destinyMembershipId</con:entry>
+									<con:entry>characterId</con:entry>
+									<con:entry>itemInstanceId</con:entry>
+									<con:entry/>
+								</con:parameterOrder>
+							</con:request>
+							<con:request name="GetItemDetail (with details)" id="329a4c35-f34c-4b0e-966d-71e3762858d5" mediaType="application/json">
+								<con:settings>
+									<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+								</con:settings>
+								<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+								<con:request/>
+								<con:credentials>
+									<con:username xsi:nil="true"/>
+									<con:password xsi:nil="true"/>
+									<con:domain xsi:nil="true"/>
+									<con:authType>No Authorization</con:authType>
+								</con:credentials>
+								<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+								<con:jmsPropertyConfig/>
+								<con:parameters>
+									<entry key="definitions" value="true" xmlns="http://eviware.com/soapui/config"/>
+								</con:parameters>
+								<con:parameterOrder>
+									<con:entry>membershipType</con:entry>
+									<con:entry>destinyMembershipId</con:entry>
+									<con:entry>characterId</con:entry>
+									<con:entry>itemInstanceId</con:entry>
+									<con:entry/>
+								</con:parameterOrder>
+							</con:request>
+						</con:method>
+					</con:resource>
+					<con:method name="GetCharacterInventory" id="91bf9448-12b9-4c38-b714-fd95fb7b42ab" method="GET">
+						<con:description>Returns the inventory for the supplied character.</con:description>
+						<con:settings/>
+						<con:parameters/>
+						<con:request name="GetCharacterInventory" id="47a63dfb-5b5e-4c9b-a2d0-5f697d2eb7bf" mediaType="application/json">
+							<con:settings>
+								<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+							</con:settings>
+							<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+							<con:request/>
+							<con:credentials>
+								<con:username xsi:nil="true"/>
+								<con:password xsi:nil="true"/>
+								<con:domain xsi:nil="true"/>
+								<con:authType>No Authorization</con:authType>
+							</con:credentials>
+							<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+							<con:jmsPropertyConfig/>
+							<con:parameters>
+								<con:entry key="membershipType" value="2"/>
+								<con:entry key="definitions" value="false"/>
+							</con:parameters>
+							<con:parameterOrder>
+								<con:entry>membershipType</con:entry>
+								<con:entry>destinyMembershipId</con:entry>
+								<con:entry>characterId</con:entry>
+								<con:entry>definitions</con:entry>
+							</con:parameterOrder>
+						</con:request>
+						<con:request name="GetCharacterInventory (with definitions)" id="47a63dfb-5b5e-4c9b-a2d0-5f697d2eb7bf" mediaType="application/json">
+							<con:settings>
+								<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+							</con:settings>
+							<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+							<con:request/>
+							<con:credentials>
+								<con:username xsi:nil="true"/>
+								<con:password xsi:nil="true"/>
+								<con:domain xsi:nil="true"/>
+								<con:authType>No Authorization</con:authType>
+							</con:credentials>
+							<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+							<con:jmsPropertyConfig/>
+							<con:parameters>
+								<con:entry key="membershipType" value="2"/>
+								<con:entry key="definitions" value="true"/>
+							</con:parameters>
+							<con:parameterOrder>
+								<con:entry>membershipType</con:entry>
+								<con:entry>destinyMembershipId</con:entry>
+								<con:entry>characterId</con:entry>
+								<con:entry>definitions</con:entry>
+							</con:parameterOrder>
+						</con:request>
+					</con:method>
+				</con:resource>
+				<con:resource name="Activities" path="Activities" id="90c56650-9644-47ca-88bf-8995fff62bc6">
+					<con:description/>
+					<con:settings/>
+					<con:parameters/>
+					<con:method name="GetCharacterActivities" id="ba6068bf-2309-4b03-9119-1f055668d448" method="GET">
+						<con:description>Retrieve the activity for the supplied character.</con:description>
+						<con:settings/>
+						<con:parameters/>
+						<con:representation type="RESPONSE">
+							<con:mediaType>application/json; charset=utf-8</con:mediaType>
+							<con:status>200</con:status>
+							<con:params/>
+							<con:element xmlns:ns="https://www.bungie.net/Platform/Destiny/">ns:Response</con:element>
+						</con:representation>
+						<con:representation type="FAULT">
+							<con:mediaType>text/html; charset=UTF-8</con:mediaType>
+							<con:status>404</con:status>
+							<con:params/>
+							<con:element>html</con:element>
+						</con:representation>
+						<con:request name="GetCharacterActivities" id="48c51612-8fe7-4650-8c86-885e8f6eb5f1" mediaType="application/json">
+							<con:settings>
+								<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+							</con:settings>
+							<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+							<con:request/>
+							<con:credentials>
+								<con:username xsi:nil="true"/>
+								<con:password xsi:nil="true"/>
+								<con:domain xsi:nil="true"/>
+								<con:authType>No Authorization</con:authType>
+							</con:credentials>
+							<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+							<con:jmsPropertyConfig/>
+							<con:parameters>
+								<con:entry key="membershipType" value="2"/>
+								<con:entry key="definitions" value="false"/>
+							</con:parameters>
+							<con:parameterOrder>
+								<con:entry>destinyMembershipId</con:entry>
+								<con:entry>definitions</con:entry>
+								<con:entry>membershipType</con:entry>
+								<con:entry>characterId</con:entry>
+							</con:parameterOrder>
+						</con:request>
+						<con:request name="GetCharacterActivities (with details)" id="48c51612-8fe7-4650-8c86-885e8f6eb5f1" mediaType="application/json">
+							<con:settings>
+								<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+							</con:settings>
+							<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+							<con:request/>
+							<con:credentials>
+								<con:username xsi:nil="true"/>
+								<con:password xsi:nil="true"/>
+								<con:domain xsi:nil="true"/>
+								<con:authType>No Authorization</con:authType>
+							</con:credentials>
+							<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+							<con:jmsPropertyConfig/>
+							<con:parameters>
+								<con:entry key="membershipType" value="2"/>
+								<con:entry key="definitions" value="true"/>
+							</con:parameters>
+							<con:parameterOrder>
+								<con:entry>destinyMembershipId</con:entry>
+								<con:entry>definitions</con:entry>
+								<con:entry>membershipType</con:entry>
+								<con:entry>characterId</con:entry>
+							</con:parameterOrder>
+						</con:request>
+					</con:method>
+				</con:resource>
+				<con:method name="GetCharacterSummary" id="e995d02a-d164-4dc8-88ed-d6d531663aff" method="GET">
+					<con:settings/>
+					<con:parameters/>
+					<con:request name="GetCharacterSummary" id="51fab38a-1422-4547-baa3-690399a5ba76" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:username xsi:nil="true"/>
+							<con:password xsi:nil="true"/>
+							<con:domain xsi:nil="true"/>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<entry key="definitions" value="false" xmlns="http://eviware.com/soapui/config"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>destinyMembershipId</con:entry>
+							<con:entry>characterId</con:entry>
+							<con:entry>definitions</con:entry>
+							<con:entry>membershipType</con:entry>
+						</con:parameterOrder>
+					</con:request>
+					<con:request name="GetCharacterSummary (with definitions)" id="51fab38a-1422-4547-baa3-690399a5ba76" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:username xsi:nil="true"/>
+							<con:password xsi:nil="true"/>
+							<con:domain xsi:nil="true"/>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<entry key="definitions" value="true" xmlns="http://eviware.com/soapui/config"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>destinyMembershipId</con:entry>
+							<con:entry>characterId</con:entry>
+							<con:entry>definitions</con:entry>
+							<con:entry>membershipType</con:entry>
+						</con:parameterOrder>
+					</con:request>
+				</con:method>
+			</con:resource>
+			<con:resource name="Account summary" path="Summary" id="fd079406-a39b-4609-9916-1095c0c17f67">
+				<con:description/>
+				<con:settings/>
+				<con:parameters/>
+				<con:method name="GetDestinyAccountSummary" id="f4a98d10-0142-422c-aafa-2a3465df3f81" method="GET">
+					<con:description>Returns Destiny account summary information for the supplied membership.</con:description>
+					<con:settings/>
+					<con:parameters/>
+					<con:request name="GetDestinyAccountSummary" id="ab185c84-88a5-4202-b2bc-7c6795cb8ccf" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:username xsi:nil="true"/>
+							<con:password xsi:nil="true"/>
+							<con:domain xsi:nil="true"/>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<con:entry key="membershipType" value="2"/>
+							<con:entry key="definitions" value="false"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>destinyMembershipId</con:entry>
+							<con:entry>definitions</con:entry>
+							<con:entry>membershipType</con:entry>
+						</con:parameterOrder>
+					</con:request>
+					<con:request name="GetDestinyAccountSummary (with details)" id="ab185c84-88a5-4202-b2bc-7c6795cb8ccf" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:username xsi:nil="true"/>
+							<con:password xsi:nil="true"/>
+							<con:domain xsi:nil="true"/>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<con:entry key="membershipType" value="2"/>
+							<con:entry key="definitions" value="true"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>destinyMembershipId</con:entry>
+							<con:entry>definitions</con:entry>
+							<con:entry>membershipType</con:entry>
+						</con:parameterOrder>
+					</con:request>
+				</con:method>
+			</con:resource>
+			<con:resource name="Triumphs" path="Triumphs" id="78b56a3f-6d03-4e4b-bf82-cfa9d7c5449e">
+				<con:description/>
+				<con:settings/>
+				<con:parameters>
+					<con:parameter>
+						<con:name>definitions</con:name>
+						<con:style>QUERY</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:boolean</con:type>
+					</con:parameter>
+				</con:parameters>
+				<con:method name="GetTriumphs" id="ab3fbcda-65c0-49df-a52f-07d795e577f9" method="GET">
+					<con:description>Provides Triumphs for a given Destiny account.</con:description>
+					<con:settings/>
+					<con:parameters/>
+					<con:representation type="RESPONSE">
+						<con:mediaType>application/json; charset=utf-8</con:mediaType>
+						<con:status>200</con:status>
+						<con:params/>
+						<con:element xmlns:ns="https://www.bungie.net/Platform/Destiny/">ns:Response</con:element>
+					</con:representation>
+					<con:representation type="FAULT">
+						<con:mediaType>text/html; charset=UTF-8</con:mediaType>
+						<con:status>404</con:status>
+						<con:params/>
+						<con:element>html</con:element>
+					</con:representation>
+					<con:request name="GetTriumphs" id="47b6ab27-5f44-4b1a-8ca7-3608fbd3174c" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:username xsi:nil="true"/>
+							<con:password xsi:nil="true"/>
+							<con:domain xsi:nil="true"/>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<entry key="definitions" value="false" xmlns="http://eviware.com/soapui/config"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>membershipType</con:entry>
+							<con:entry>destinyMembershipId</con:entry>
+							<con:entry>definitions</con:entry>
+						</con:parameterOrder>
+					</con:request>
+					<con:request name="GetTriumphs (with details)" id="47b6ab27-5f44-4b1a-8ca7-3608fbd3174c" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:username xsi:nil="true"/>
+							<con:password xsi:nil="true"/>
+							<con:domain xsi:nil="true"/>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<entry key="definitions" value="true" xmlns="http://eviware.com/soapui/config"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>membershipType</con:entry>
+							<con:entry>destinyMembershipId</con:entry>
+							<con:entry>definitions</con:entry>
+						</con:parameterOrder>
+					</con:request>
+				</con:method>
+			</con:resource>
+			<con:method name="GetAccount" id="947a6562-c9ee-43a6-b314-da79113f1c73" method="GET">
+				<con:description>Returns Destiny account information for the supplied membership.</con:description>
+				<con:settings/>
+				<con:parameters/>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json; charset=utf-8</con:mediaType>
+					<con:status>200</con:status>
+					<con:params/>
+					<con:element xmlns:ns="https://www.bungie.net/Platform/Destiny/">ns:Response</con:element>
+				</con:representation>
+				<con:representation type="FAULT">
+					<con:mediaType>text/html; charset=UTF-8</con:mediaType>
+					<con:status>404</con:status>
+					<con:params/>
+					<con:element>html</con:element>
+				</con:representation>
+				<con:request name="GetAccount" id="8e905203-a7f6-4a38-9808-3ed0982128aa" mediaType="application/json">
+					<con:settings>
+						<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+					</con:settings>
+					<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+					<con:request/>
+					<con:credentials>
+						<con:username xsi:nil="true"/>
+						<con:password xsi:nil="true"/>
+						<con:domain xsi:nil="true"/>
+						<con:authType>No Authorization</con:authType>
+					</con:credentials>
+					<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+					<con:jmsPropertyConfig/>
+					<con:parameters>
+						<con:entry key="membershipType" value="2"/>
+						<con:entry key="definitions" value="false"/>
+					</con:parameters>
+					<con:parameterOrder>
+						<con:entry>definitions</con:entry>
+						<con:entry>membershipType</con:entry>
+						<con:entry>destinyMembershipId</con:entry>
+					</con:parameterOrder>
+				</con:request>
+				<con:request name="GetAccount (with definitions)" id="8e905203-a7f6-4a38-9808-3ed0982128aa" mediaType="application/json">
+					<con:settings>
+						<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+					</con:settings>
+					<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+					<con:request/>
+					<con:credentials>
+						<con:username xsi:nil="true"/>
+						<con:password xsi:nil="true"/>
+						<con:domain xsi:nil="true"/>
+						<con:authType>No Authorization</con:authType>
+					</con:credentials>
+					<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+					<con:jmsPropertyConfig/>
+					<con:parameters>
+						<con:entry key="membershipType" value="2"/>
+						<con:entry key="definitions" value="true"/>
+					</con:parameters>
+					<con:parameterOrder>
+						<con:entry>definitions</con:entry>
+						<con:entry>membershipType</con:entry>
+						<con:entry>destinyMembershipId</con:entry>
+					</con:parameterOrder>
+				</con:request>
+			</con:method>
+		</con:resource>
+		<con:resource name="Explorer" path="Explorer" id="25770988-8135-4946-86a9-ef5d95680d34">
+			<con:description/>
+			<con:settings/>
+			<con:parameters/>
+			<con:resource name="Items" path="Items" id="25770988-8135-4946-86a9-ef5d95680d34">
+				<con:description/>
+				<con:settings/>
+				<con:parameters>
+					<con:parameter required="true" disableUrlEncoding="false">
+						<con:name>count</con:name>
+						<con:value>500</con:value>
+						<con:style>QUERY</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+						<con:default>500</con:default>
+						<con:option>10</con:option>
+						<con:option>25</con:option>
+						<con:option>50</con:option>
+						<con:option>100</con:option>
+						<con:option>500</con:option>
+						<con:description>Number of rows to return.</con:description>
+					</con:parameter>
+					<con:parameter required="true" disableUrlEncoding="false">
+						<con:name>page</con:name>
+						<con:value>0</con:value>
+						<con:style>QUERY</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+						<con:default>0</con:default>
+						<con:description>Page number to return, starting with 0.</con:description>
+					</con:parameter>
+					<con:parameter required="false" disableUrlEncoding="false">
+						<con:name>name</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+						<con:default/>
+						<con:description>Name of items to return (partial match, no case). Omit for all items.</con:description>
+					</con:parameter>
+					<con:parameter required="true" disableUrlEncoding="false">
+						<con:name>order</con:name>
+						<con:value>Name</con:value>
+						<con:style>QUERY</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+						<con:default>Name</con:default>
+						<con:option>Name</con:option>
+						<con:option>ItemType</con:option>
+						<con:option>Rarity</con:option>
+						<con:option>ItemTypeName</con:option>
+						<con:option>ItemStatHash</con:option>
+						<con:option>MinimumRequiredLevel</con:option>
+						<con:option>MaximumRequiredLevel</con:option>
+						<con:description>Item property used for sorting.</con:description>
+					</con:parameter>
+					<con:parameter required="false" disableUrlEncoding="false">
+						<con:name>orderstathash</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+						<con:default/>
+						<con:description>This value is used when the order parameter is set to ItemStatHash. The item stat for the provided hash value will be used in the sort.</con:description>
+					</con:parameter>
+					<con:parameter required="true">
+						<con:name>direction</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:default/>
+						<con:option>Ascending</con:option>
+						<con:option>Descending</con:option>
+						<con:description xsi:nil="true"/>
+					</con:parameter>
+					<con:parameter>
+						<con:name>definitions</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:default/>
+						<con:description>Indicates the item definitions should be returned with item hash results.</con:description>
+					</con:parameter>
+					<con:parameter>
+						<con:name>step</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:default/>
+						<con:description>Hash ID of the talent node step that an item must have in order to be returned.</con:description>
+					</con:parameter>
+					<con:parameter>
+						<con:name>categories</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:default/>
+						<con:description>Category identifiers. Only items that are in all of the passed-in categories will be returned.</con:description>
+					</con:parameter>
+					<con:parameter>
+						<con:name>rarity</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:default/>
+						<con:option>Currency</con:option>
+						<con:option>Basic</con:option>
+						<con:option>Common</con:option>
+						<con:option>Rare</con:option>
+						<con:option>Superior</con:option>
+						<con:option>Exotic</con:option>
+						<con:description>Rarity of items to return. Omit for all items.</con:description>
+					</con:parameter>
+					<con:parameter>
+						<con:name>weaponPerformance</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:default/>
+						<con:option>RateOfFire</con:option>
+						<con:option>Damage</con:option>
+						<con:option>Accuracy</con:option>
+						<con:option>Range</con:option>
+						<con:option>Zoom</con:option>
+						<con:option>Recoil</con:option>
+						<con:option>Ready</con:option>
+						<con:option>Reload</con:option>
+						<con:option>HairTrigger</con:option>
+						<con:option>AmmoAndMagazine</con:option>
+						<con:option>TrackingAndDetonation</con:option>
+						<con:option>ShotgunSpread</con:option>
+						<con:option>ChargeTime</con:option>
+						<con:description>Items must have node steps in one of these categories, omit for all items.</con:description>
+					</con:parameter>
+					<con:parameter>
+						<con:name>impactEffects</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:default/>
+						<con:option>ArmorPiercing</con:option>
+						<con:option>Ricochet</con:option>
+						<con:option>Flinch</con:option>
+						<con:option>CollateralDamage</con:option>
+						<con:option>Disorient</con:option>
+						<con:option>HighlightTarget</con:option>
+						<con:description>Items must have node steps in one of these categories, omit for all items.</con:description>
+					</con:parameter>
+					<con:parameter disableUrlEncoding="false">
+						<con:name>guardianAttributes</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:default/>
+						<con:option>Stats</con:option>
+						<con:option>Shields</con:option>
+						<con:option>Health</con:option>
+						<con:option>Revive</con:option>
+						<con:option>AimUnderFire</con:option>
+						<con:option>Radar</con:option>
+						<con:option>Invisibility</con:option>
+						<con:option>Reputations</con:option>
+						<con:description>Items must have node steps in one of these categories, omit for all items.</con:description>
+					</con:parameter>
+					<con:parameter>
+						<con:name>lightAbilities</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:default/>
+						<con:option>Grenades</con:option>
+						<con:option>Melee</con:option>
+						<con:option>MovementModes</con:option>
+						<con:option>Orbs</con:option>
+						<con:option>SuperEnergy</con:option>
+						<con:option>SuperMods</con:option>
+						<con:description>Items must have node steps in one of these categories, omit for all items.</con:description>
+					</con:parameter>
+					<con:parameter>
+						<con:name>damageTypes</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:default/>
+						<con:option>Kinetic</con:option>
+						<con:option>Arc</con:option>
+						<con:option>Solar</con:option>
+						<con:option>Void</con:option>
+						<con:description>Items must have node steps in one of these categories, omit for all items.</con:description>
+					</con:parameter>
+					<con:parameter>
+						<con:name>sourcecat</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:default/>
+						<con:option>Vendor</con:option>
+						<con:option>Activity</con:option>
+						<con:description>Items must drop from the specified source category, omit for all items.</con:description>
+					</con:parameter>
+					<con:parameter>
+						<con:name>sourcehash</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:default/>
+						<con:description>Items must drop from the specified source, omit for all items. Overrides sourcecat.</con:description>
+					</con:parameter>
+					<con:parameter>
+						<con:name>matchrandomsteps</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:default/>
+						<con:description>True if the supplied groups/step hash filters should match random node steps. False indicates the item can always get the step before it is considered a match.</con:description>
+					</con:parameter>
+				</con:parameters>
+				<con:method name="GetDestinyExplorerItems" id="d2e25d37-f37d-4422-97c2-3a44d665b166" method="GET">
+					<con:description>Gets a page list of Destiny items.</con:description>
+					<con:settings/>
+					<con:parameters/>
+					<con:representation type="RESPONSE">
+						<con:mediaType>application/json; charset=utf-8</con:mediaType>
+						<con:status>200</con:status>
+						<con:params/>
+						<con:element xmlns:ns="https://www.bungie.net/Platform/Destiny/">ns:Response</con:element>
+					</con:representation>
+					<con:representation type="FAULT">
+						<con:mediaType>text/html</con:mediaType>
+						<con:status>404</con:status>
+						<con:params/>
+						<con:element>html</con:element>
+					</con:representation>
+					<con:request name="GetDestinyExplorerItems" id="ea95a701-6395-4f85-9626-aa115c10b598" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:username xsi:nil="true"/>
+							<con:password xsi:nil="true"/>
+							<con:domain xsi:nil="true"/>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<con:entry key="count" value="10"/>
+							<con:entry key="direction" value="Ascending"/>
+							<con:entry key="definitions" value="true"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>count</con:entry>
+							<con:entry>page</con:entry>
+							<con:entry>name</con:entry>
+							<con:entry>order</con:entry>
+							<con:entry>orderstathash</con:entry>
+							<con:entry>direction</con:entry>
+							<con:entry>definitions</con:entry>
+							<con:entry>step</con:entry>
+							<con:entry>categories</con:entry>
+							<con:entry>rarity</con:entry>
+							<con:entry>weaponPerformance</con:entry>
+							<con:entry>impactEffects</con:entry>
+							<con:entry>guardianAttributes</con:entry>
+							<con:entry>lightAbilities</con:entry>
+							<con:entry>damageTypes</con:entry>
+							<con:entry>sourcecat</con:entry>
+							<con:entry>sourcehash</con:entry>
+							<con:entry>matchrandomsteps</con:entry>
+						</con:parameterOrder>
+					</con:request>
+					<con:request name="GetDestinyExplorerItems (with definitions)" id="ea95a701-6395-4f85-9626-aa115c10b598" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:username xsi:nil="true"/>
+							<con:password xsi:nil="true"/>
+							<con:domain xsi:nil="true"/>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<con:entry key="count" value="10"/>
+							<con:entry key="direction" value="Ascending"/>
+							<con:entry key="definitions" value="true"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>count</con:entry>
+							<con:entry>page</con:entry>
+							<con:entry>name</con:entry>
+							<con:entry>order</con:entry>
+							<con:entry>orderstathash</con:entry>
+							<con:entry>direction</con:entry>
+							<con:entry>definitions</con:entry>
+							<con:entry>step</con:entry>
+							<con:entry>categories</con:entry>
+							<con:entry>rarity</con:entry>
+							<con:entry>weaponPerformance</con:entry>
+							<con:entry>impactEffects</con:entry>
+							<con:entry>guardianAttributes</con:entry>
+							<con:entry>lightAbilities</con:entry>
+							<con:entry>damageTypes</con:entry>
+							<con:entry>sourcecat</con:entry>
+							<con:entry>sourcehash</con:entry>
+							<con:entry>matchrandomsteps</con:entry>
+						</con:parameterOrder>
+					</con:request>
+				</con:method>
+			</con:resource>
+			<con:resource name="TalentNodeSteps" path="TalentNodeSteps" id="bb7120b5-9460-4a52-bca7-f15ff9a97e03">
+				<con:description/>
+				<con:settings/>
+				<con:parameters>
+					<con:parameter>
+						<con:name>guardianAttributes</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:default/>
+						<con:option>Stats</con:option>
+						<con:option>Shields</con:option>
+						<con:option>Health</con:option>
+						<con:option>Revive</con:option>
+						<con:option>AimUnderFire</con:option>
+						<con:option>Radar</con:option>
+						<con:option>Invisibility</con:option>
+						<con:option>Reputations</con:option>
+						<con:description>Node steps in one of these categories, omit for all steps.</con:description>
+					</con:parameter>
+					<con:parameter>
+						<con:name>count</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+						<con:default/>
+						<con:option>10</con:option>
+						<con:option>25</con:option>
+						<con:option>50</con:option>
+						<con:option>100</con:option>
+						<con:option>500</con:option>
+						<con:description>Number of rows to return.</con:description>
+					</con:parameter>
+					<con:parameter>
+						<con:name>direction</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:default/>
+						<con:option>Ascending</con:option>
+						<con:option>Descending</con:option>
+						<con:description>Order to sort steps (by name).</con:description>
+					</con:parameter>
+					<con:parameter>
+						<con:name>impactEffects</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:anySimpleType</con:type>
+						<con:default/>
+						<con:option>ArmorPiercing</con:option>
+						<con:option>Ricochet</con:option>
+						<con:option>Flinch</con:option>
+						<con:option>CollateralDamage</con:option>
+						<con:option>Disorient</con:option>
+						<con:option>HighlightTarget</con:option>
+						<con:description>Node steps in one of these categories, omit for all steps.</con:description>
+					</con:parameter>
+					<con:parameter>
+						<con:name>definitions</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:boolean</con:type>
+						<con:default/>
+						<con:description>Indicates the step definitions should be returned with item hash results.</con:description>
+					</con:parameter>
+					<con:parameter>
+						<con:name>page</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:nonNegativeInteger</con:type>
+						<con:default/>
+						<con:description>Page number to return, starting with 0.</con:description>
+					</con:parameter>
+					<con:parameter>
+						<con:name>name</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:default/>
+						<con:description xsi:nil="true"/>
+					</con:parameter>
+					<con:parameter>
+						<con:name>lightAbilities</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:default/>
+						<con:description xsi:nil="true"/>
+					</con:parameter>
+					<con:parameter>
+						<con:name>weaponPerformance</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:default/>
+						<con:description xsi:nil="true"/>
+					</con:parameter>
+					<con:parameter>
+						<con:name>damageTypes</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:default/>
+						<con:description xsi:nil="true"/>
+					</con:parameter>
+				</con:parameters>
+				<con:method name="GetDestinyExplorerTalentNodeSteps" id="a9c24807-607e-47f5-969c-0c2a40a61e8c" method="GET">
+					<con:description>Gets a page list of Destiny talent node steps, ordered by the step name.</con:description>
+					<con:settings/>
+					<con:parameters/>
+					<con:representation type="RESPONSE">
+						<con:mediaType>application/json; charset=utf-8</con:mediaType>
+						<con:status>200</con:status>
+						<con:params/>
+						<con:element xmlns:ns="https://www.bungie.net/Platform/Destiny/">ns:Response</con:element>
+					</con:representation>
+					<con:representation type="FAULT">
+						<con:mediaType>text/html</con:mediaType>
+						<con:status>404</con:status>
+						<con:params/>
+						<con:element>html</con:element>
+					</con:representation>
+					<con:request name="GetDestinyExplorerTalentNodeSteps" id="9453e496-bc3d-4b89-baa7-e8fb2a31cccc" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:username xsi:nil="true"/>
+							<con:password xsi:nil="true"/>
+							<con:domain xsi:nil="true"/>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<entry key="definitions" value="false" xmlns="http://eviware.com/soapui/config"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>guardianAttributes</con:entry>
+							<con:entry>count</con:entry>
+							<con:entry>direction</con:entry>
+							<con:entry>impactEffects</con:entry>
+							<con:entry>definitions</con:entry>
+							<con:entry>page</con:entry>
+							<con:entry>name</con:entry>
+							<con:entry>lightAbilities</con:entry>
+							<con:entry>weaponPerformance</con:entry>
+							<con:entry>damageTypes</con:entry>
+						</con:parameterOrder>
+					</con:request>
+					<con:request name="GetDestinyExplorerTalentNodeSteps (with definitions)" id="9453e496-bc3d-4b89-baa7-e8fb2a31cccc" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:username xsi:nil="true"/>
+							<con:password xsi:nil="true"/>
+							<con:domain xsi:nil="true"/>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<entry key="definitions" value="true" xmlns="http://eviware.com/soapui/config"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>guardianAttributes</con:entry>
+							<con:entry>count</con:entry>
+							<con:entry>direction</con:entry>
+							<con:entry>impactEffects</con:entry>
+							<con:entry>definitions</con:entry>
+							<con:entry>page</con:entry>
+							<con:entry>name</con:entry>
+							<con:entry>lightAbilities</con:entry>
+							<con:entry>weaponPerformance</con:entry>
+							<con:entry>damageTypes</con:entry>
+						</con:parameterOrder>
+					</con:request>
+				</con:method>
+			</con:resource>
+		</con:resource>
+		<con:resource name="Manifest" path="Manifest" id="7e1a51d1-fea1-4f3f-a730-63ca28bf30dd">
+			<con:description/>
+			<con:settings/>
+			<con:parameters/>
+			<con:resource name="Manifest item" path="{type}/{id}" id="f7188062-c201-4d5d-bc83-579bfeb4147e">
+				<con:description/>
+				<con:settings/>
+				<con:parameters>
+					<con:parameter required="true">
+						<con:name>type</con:name>
+						<con:value>type</con:value>
+						<con:style>TEMPLATE</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+						<con:default>type</con:default>
+						<con:description>The type of definition to return.</con:description>
+					</con:parameter>
+					<con:parameter required="true">
+						<con:name>id</con:name>
+						<con:value>id</con:value>
+						<con:style>TEMPLATE</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:integer</con:type>
+						<con:default>id</con:default>
+						<con:description>The hash ID of the definition instance.</con:description>
+					</con:parameter>
+				</con:parameters>
+				<con:method name="GetDestinySingleDefinition" id="4021a9df-5ed1-42a0-b861-ce3d6eb2c312" method="GET">
+					<con:description>Returns the specific item from the current manifest a json object.</con:description>
+					<con:settings/>
+					<con:parameters>
+						<con:parameter>
+							<con:name>definitions</con:name>
+							<con:value/>
+							<con:style>QUERY</con:style>
+							<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:boolean</con:type>
+							<con:default/>
+							<con:description>If true, related definitions will be returned.</con:description>
+						</con:parameter>
+					</con:parameters>
+					<con:representation type="RESPONSE">
+						<con:mediaType>application/json; charset=utf-8</con:mediaType>
+						<con:status>200</con:status>
+						<con:params/>
+						<con:element xmlns:ns="https://www.bungie.net/Platform/Destiny/">ns:Response</con:element>
+					</con:representation>
+					<con:representation type="FAULT">
+						<con:mediaType>text/html</con:mediaType>
+						<con:status>404</con:status>
+						<con:params/>
+						<con:element>html</con:element>
+					</con:representation>
+					<con:request name="GetDestinySingleDefinition" id="61bb86fc-893d-4d2e-915b-40be246f3039" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:username xsi:nil="true"/>
+							<con:password xsi:nil="true"/>
+							<con:domain xsi:nil="true"/>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<con:entry key="id" value=""/>
+							<con:entry key="definitions" value="true"/>
+							<con:entry key="type" value="1"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>type</con:entry>
+							<con:entry>id</con:entry>
+							<con:entry>definitions</con:entry>
+						</con:parameterOrder>
+					</con:request>
+					<con:request name="GetDestinySingleDefinition (with definitions)" id="61bb86fc-893d-4d2e-915b-40be246f3039" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:username xsi:nil="true"/>
+							<con:password xsi:nil="true"/>
+							<con:domain xsi:nil="true"/>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<con:entry key="id" value=""/>
+							<con:entry key="definitions" value="true"/>
+							<con:entry key="type" value="1"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>type</con:entry>
+							<con:entry>id</con:entry>
+							<con:entry>definitions</con:entry>
+						</con:parameterOrder>
+					</con:request>
+				</con:method>
+			</con:resource>
+			<con:method name="GetDestinyManifest" id="3045d64b-8c48-410b-862b-9e569a30486c" method="GET">
+				<con:description>Returns the current version of the manifest as a json object.</con:description>
+				<con:settings/>
+				<con:parameters/>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json; charset=utf-8</con:mediaType>
+					<con:status>200</con:status>
+					<con:params/>
+					<con:element xmlns:man="http://www.bungie.net/Platform/Destiny/Manifest/">man:Response</con:element>
+				</con:representation>
+				<con:representation type="FAULT">
+					<con:mediaType>text/html</con:mediaType>
+					<con:status>404</con:status>
+					<con:params/>
+					<con:element>html</con:element>
+				</con:representation>
+				<con:request name="GetDestinyManifest" id="b873ede6-08fc-474b-889b-f246215e70ed" mediaType="application/json">
+					<con:settings>
+						<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+					</con:settings>
+					<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+					<con:request/>
+					<con:credentials>
+						<con:username xsi:nil="true"/>
+						<con:password xsi:nil="true"/>
+						<con:domain xsi:nil="true"/>
+						<con:authType>No Authorization</con:authType>
+					</con:credentials>
+					<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+					<con:jmsPropertyConfig/>
+					<con:parameters/>
+				</con:request>
+			</con:method>
+		</con:resource>
+		<con:resource name="Search player" path="SearchDestinyPlayer/{membershipType}/{displayName}" id="0070450a-960b-4724-b01b-a8443eea16d8">
+			<con:description/>
+			<con:settings/>
+			<con:parameters>
+				<con:parameter required="true">
+					<con:name>membershipType</con:name>
+					<con:value>membershipType</con:value>
+					<con:style>TEMPLATE</con:style>
+					<con:default>membershipType</con:default>
+					<con:description>A valid non-BungieNet membership type, or All.</con:description>
+				</con:parameter>
+				<con:parameter required="true" disableUrlEncoding="false">
+					<con:name>displayName</con:name>
+					<con:value>displayName</con:value>
+					<con:style>TEMPLATE</con:style>
+					<con:default>displayName</con:default>
+					<con:description>The full gamertag or PSN id of the player. Spaces and case are ignored.</con:description>
+				</con:parameter>
+			</con:parameters>
+			<con:method name="SearchDestinyPlayer" id="2275d8f6-bad2-4800-a8eb-19c33ddf886f" method="GET">
+				<con:description>Returns a list of Destiny memberships given a full Gamertag or PSN ID.</con:description>
+				<con:settings/>
+				<con:parameters/>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json; charset=utf-8</con:mediaType>
+					<con:status>200</con:status>
+					<con:params/>
+					<con:element xmlns:ns="https://www.bungie.net/Platform/Destiny/">ns:Response</con:element>
+				</con:representation>
+				<con:representation type="FAULT">
+					<con:mediaType>text/html; charset=UTF-8</con:mediaType>
+					<con:status>404</con:status>
+					<con:params/>
+					<con:element>html</con:element>
+				</con:representation>
+				<con:request name="SearchDestinyPlayer" id="37024d0e-963a-446f-84dd-87c6c2728df5" mediaType="application/json">
+					<con:settings>
+						<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+					</con:settings>
+					<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+					<con:request/>
+					<con:credentials>
+						<con:username xsi:nil="true"/>
+						<con:password xsi:nil="true"/>
+						<con:domain xsi:nil="true"/>
+						<con:authType>No Authorization</con:authType>
+					</con:credentials>
+					<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+					<con:jmsPropertyConfig/>
+					<con:parameters>
+						<con:entry key="membershipType" value="All"/>
+						<con:entry key="displayName" value=""/>
+					</con:parameters>
+					<con:parameterOrder>
+						<con:entry>membershipType</con:entry>
+						<con:entry>displayName</con:entry>
+					</con:parameterOrder>
+				</con:request>
+			</con:method>
+		</con:resource>
+		<con:resource name="Statistics" path="Stats" id="1177808a-6c7e-4259-b0c0-99ce4037560c">
+			<con:settings/>
+			<con:parameters/>
+			<con:resource name="Definition" path="Definition" id="6b77b406-ce06-4292-8ef3-f1bf69590edf">
+				<con:description/>
+				<con:settings/>
+				<con:parameters/>
+				<con:method name="GetHistoricalStatsDefinition" id="3aa836ea-e8bc-43dc-b487-89d8ea8d4e05" method="GET">
+					<con:description>Gets historical stats definitions.</con:description>
+					<con:settings/>
+					<con:parameters/>
+					<con:representation type="RESPONSE">
+						<con:mediaType>application/json; charset=utf-8</con:mediaType>
+						<con:status>200</con:status>
+						<con:params/>
+						<con:element xmlns:ns="https://www.bungie.net/Platform/Destiny/">ns:Response</con:element>
+					</con:representation>
+					<con:representation type="FAULT">
+						<con:mediaType>text/html</con:mediaType>
+						<con:status>404</con:status>
+						<con:params/>
+						<con:element>html</con:element>
+					</con:representation>
+					<con:request name="GetHistoricalStatsDefinition" id="31b0b392-d8a4-4232-b10f-24612cee8e08" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:username xsi:nil="true"/>
+							<con:password xsi:nil="true"/>
+							<con:domain xsi:nil="true"/>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters/>
+					</con:request>
+				</con:method>
+			</con:resource>
+			<con:resource name="Historical stats for account" path="Account/{membershipType}/{destinyMembershipId}" id="dc00f8a2-f7b2-46a0-a749-18655314838b">
+				<con:description/>
+				<con:settings/>
+				<con:parameters>
+					<con:parameter required="true">
+						<con:name>membershipType</con:name>
+						<con:value>membershipType</con:value>
+						<con:style>TEMPLATE</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+						<con:default>membershipType</con:default>
+						<con:description>A valid non-BungieNet membership type.</con:description>
+					</con:parameter>
+					<con:parameter required="true">
+						<con:name>destinyMembershipId</con:name>
+						<con:value>destinyMembershipId</con:value>
+						<con:style>TEMPLATE</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:positiveInteger</con:type>
+						<con:default>destinyMembershipId</con:default>
+						<con:description>The Destiny membershipId of the user to retrieve.</con:description>
+					</con:parameter>
+				</con:parameters>
+				<con:method name="GetHistoricalStatsForAccount" id="28c8c14e-2d2c-4119-ab0e-61046f8e9c20" method="GET">
+					<con:description>Gets aggregate historical stats organized around each character for a given account.</con:description>
+					<con:settings/>
+					<con:parameters>
+						<con:parameter>
+							<con:name>groups</con:name>
+							<con:value/>
+							<con:style>QUERY</con:style>
+							<con:default/>
+							<con:option>General</con:option>
+							<con:option>Weapons</con:option>
+							<con:option>Medals</con:option>
+							<con:option>Enemies</con:option>
+							<con:description>Groups of stats to include, otherwise only general stats are returned. Comma separated list is allowed.</con:description>
+						</con:parameter>
+					</con:parameters>
+					<con:representation type="RESPONSE">
+						<con:mediaType>application/json; charset=utf-8</con:mediaType>
+						<con:status>200</con:status>
+						<con:params/>
+						<con:element xmlns:ns="https://www.bungie.net/Platform/Destiny/">ns:Response</con:element>
+					</con:representation>
+					<con:representation type="FAULT">
+						<con:mediaType>text/html</con:mediaType>
+						<con:status>404</con:status>
+						<con:params/>
+						<con:element>html</con:element>
+					</con:representation>
+					<con:request name="GetHistoricalStatsForAccount" id="52cf952c-58c4-4b4c-b7eb-5a21709afa9a" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:username xsi:nil="true"/>
+							<con:password xsi:nil="true"/>
+							<con:domain xsi:nil="true"/>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters/>
+						<con:parameterOrder>
+							<con:entry>membershipType</con:entry>
+							<con:entry>destinyMembershipId</con:entry>
+							<con:entry>groups</con:entry>
+						</con:parameterOrder>
+					</con:request>
+				</con:method>
+			</con:resource>
+			<con:resource name="Historical stats for character" path="{membershipType}/{destinyMembershipId}/{characterId}" id="0057a9df-f528-46c7-aaf3-cd0ed0daad8d">
+				<con:description/>
+				<con:settings/>
+				<con:parameters>
+					<con:parameter required="true" disableUrlEncoding="false">
+						<con:name>membershipType</con:name>
+						<con:value>membershipType</con:value>
+						<con:style>TEMPLATE</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+						<con:default>membershipType</con:default>
+						<con:description>A valid non-BungieNet membership type.</con:description>
+					</con:parameter>
+					<con:parameter required="true" disableUrlEncoding="false">
+						<con:name>destinyMembershipId</con:name>
+						<con:value>destinyMembershipId</con:value>
+						<con:style>TEMPLATE</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+						<con:default>destinyMembershipId</con:default>
+						<con:description>The Destiny membershipId of the user to retrieve.</con:description>
+					</con:parameter>
+					<con:parameter required="true" disableUrlEncoding="false">
+						<con:name>characterId</con:name>
+						<con:value>characterId</con:value>
+						<con:style>TEMPLATE</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+						<con:default>characterId</con:default>
+						<con:description>The id of the character to retrieve. You can omit this character ID or set it to 0 to get aggregate stats across all characters.</con:description>
+					</con:parameter>
+				</con:parameters>
+				<con:method name="GetHistoricalStats" id="adaf0124-04fd-414c-9233-904763ad31b5" method="GET">
+					<con:description>Gets historical stats for indicated character.</con:description>
+					<con:settings/>
+					<con:parameters>
+						<con:parameter>
+							<con:name>periodType</con:name>
+							<con:value/>
+							<con:style>QUERY</con:style>
+							<con:default/>
+							<con:option>Daily</con:option>
+							<con:option>Monthly</con:option>
+							<con:option>AllTime</con:option>
+							<con:option>Activity</con:option>
+							<con:description>Indicates a specific period type to return. Optional.</con:description>
+						</con:parameter>
+						<con:parameter>
+							<con:name>modes</con:name>
+							<con:value/>
+							<con:style>QUERY</con:style>
+							<con:default/>
+							<con:option/>
+							<con:option>None</con:option>
+							<con:option>Story</con:option>
+							<con:option>Strike</con:option>
+							<con:option>Raid</con:option>
+							<con:option>AllPvP</con:option>
+							<con:option>Patrol</con:option>
+							<con:option>AllPvE</con:option>
+							<con:option>PvPIntroduction</con:option>
+							<con:option>ThreeVsThree</con:option>
+							<con:option>Control</con:option>
+							<con:option>Lockdown</con:option>
+							<con:option>Team</con:option>
+							<con:option>FreeForAll</con:option>
+							<con:option>Nightfall</con:option>
+							<con:option>Heroic</con:option>
+							<con:option>AllStrikes</con:option>
+							<con:option>IronBanner</con:option>
+							<con:option>IronBanner</con:option>
+							<con:option>Arena</con:option>
+							<con:option>ArenaChallenge</con:option>
+							<con:option>TrialsOfOsiris</con:option>
+							<con:option>Elimination</con:option>
+							<con:description>Game modes to return.</con:description>
+						</con:parameter>
+						<con:parameter>
+							<con:name>monthstart</con:name>
+							<con:value/>
+							<con:style>QUERY</con:style>
+							<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:gYearMonth</con:type>
+							<con:default/>
+							<con:description>First month to return when monthly stats are requested. Use the format YYYY-MM.</con:description>
+						</con:parameter>
+						<con:parameter>
+							<con:name>monthend</con:name>
+							<con:value/>
+							<con:style>QUERY</con:style>
+							<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:gYearMonth</con:type>
+							<con:default/>
+							<con:description>Last month to return when monthly stats are requested. Use the format YYYY-MM.</con:description>
+						</con:parameter>
+						<con:parameter>
+							<con:name>dayend</con:name>
+							<con:value/>
+							<con:style>QUERY</con:style>
+							<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:date</con:type>
+							<con:default/>
+							<con:description>Last day to return when daily stats are requested. Use the format YYYY-MM-DD.</con:description>
+						</con:parameter>
+						<con:parameter>
+							<con:name>daystart</con:name>
+							<con:value/>
+							<con:style>QUERY</con:style>
+							<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:date</con:type>
+							<con:default/>
+							<con:description>First day to return when daily stats are requested. Use the format YYYY-MM-DD</con:description>
+						</con:parameter>
+						<con:parameter>
+							<con:name>groups</con:name>
+							<con:value/>
+							<con:style>QUERY</con:style>
+							<con:default/>
+							<con:option>General</con:option>
+							<con:option>Weapons</con:option>
+							<con:option>Medals</con:option>
+							<con:option>Enemies</con:option>
+							<con:description>Group of stats to include, otherwise only general stats are returned. Comma separated list is allowed.</con:description>
+						</con:parameter>
+					</con:parameters>
+					<con:representation type="RESPONSE">
+						<con:mediaType>application/json; charset=utf-8</con:mediaType>
+						<con:status>200</con:status>
+						<con:params/>
+						<con:element xmlns:ns="https://www.bungie.net/Platform/Destiny/">ns:Response</con:element>
+					</con:representation>
+					<con:representation type="FAULT">
+						<con:mediaType>text/html; charset=UTF-8</con:mediaType>
+						<con:status>404</con:status>
+						<con:params/>
+						<con:element>html</con:element>
+					</con:representation>
+					<con:request name="GetHistoricalStats" id="9cca3c3f-1010-4cb7-8cb5-1b4713e4b4ed" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:username xsi:nil="true"/>
+							<con:password xsi:nil="true"/>
+							<con:domain xsi:nil="true"/>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<entry key="membershipType" value="2" xmlns="http://eviware.com/soapui/config"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>destinyMembershipId</con:entry>
+							<con:entry>characterId</con:entry>
+							<con:entry>periodType</con:entry>
+							<con:entry>modes</con:entry>
+							<con:entry>monthstart</con:entry>
+							<con:entry>monthend</con:entry>
+							<con:entry>membershipType</con:entry>
+							<con:entry>dayend</con:entry>
+							<con:entry>daystart</con:entry>
+							<con:entry>groups</con:entry>
+						</con:parameterOrder>
+					</con:request>
+					<con:request name="GetHistoricalStats (all characters)" id="9cca3c3f-1010-4cb7-8cb5-1b4713e4b4ed" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:username xsi:nil="true"/>
+							<con:password xsi:nil="true"/>
+							<con:domain xsi:nil="true"/>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<con:entry key="membershipType" value="2"/>
+							<con:entry key="characterId" value="0"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>destinyMembershipId</con:entry>
+							<con:entry>characterId</con:entry>
+							<con:entry>periodType</con:entry>
+							<con:entry>modes</con:entry>
+							<con:entry>monthstart</con:entry>
+							<con:entry>monthend</con:entry>
+							<con:entry>membershipType</con:entry>
+							<con:entry>dayend</con:entry>
+							<con:entry>daystart</con:entry>
+							<con:entry>groups</con:entry>
+						</con:parameterOrder>
+					</con:request>
+				</con:method>
+			</con:resource>
+			<con:resource name="Aggregate activities" path="AggregateActivityStats/{membershipType}/{destinyMembershipId}/{characterId}" id="0ee1c497-48ee-4962-84c3-e0d36d6822b5">
+				<con:description/>
+				<con:settings/>
+				<con:parameters>
+					<con:parameter required="true">
+						<con:name>membershipType</con:name>
+						<con:value>membershipType</con:value>
+						<con:style>TEMPLATE</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+						<con:default>membershipType</con:default>
+						<con:description>A valid non-BungieNet membership type.</con:description>
+					</con:parameter>
+					<con:parameter required="true">
+						<con:name>destinyMembershipId</con:name>
+						<con:value>destinyMembershipId</con:value>
+						<con:style>TEMPLATE</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:positiveInteger</con:type>
+						<con:default>destinyMembershipId</con:default>
+						<con:description>The Destiny membershipId of the user to retrieve.</con:description>
+					</con:parameter>
+					<con:parameter required="true">
+						<con:name>characterId</con:name>
+						<con:value>characterId</con:value>
+						<con:style>TEMPLATE</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:positiveInteger</con:type>
+						<con:default>characterId</con:default>
+						<con:description>The specific character whose activities should be returned.</con:description>
+					</con:parameter>
+				</con:parameters>
+				<con:method name="GetDestinyAggregateActivityStats" id="d636b51d-b273-460b-99b5-faf46988339b" method="GET">
+					<con:description>Gets all activities the character has participated in together with aggregate statistics for those activities.</con:description>
+					<con:settings/>
+					<con:parameters>
+						<con:parameter>
+							<con:name>definitions</con:name>
+							<con:value/>
+							<con:style>QUERY</con:style>
+							<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:boolean</con:type>
+							<con:default/>
+							<con:description>Client would like activity definition returned in response.</con:description>
+						</con:parameter>
+					</con:parameters>
+					<con:representation type="RESPONSE">
+						<con:mediaType>application/json; charset=utf-8</con:mediaType>
+						<con:status>200</con:status>
+						<con:params/>
+						<con:element xmlns:ns="https://www.bungie.net/Platform/Destiny/">ns:Response</con:element>
+					</con:representation>
+					<con:representation type="FAULT">
+						<con:mediaType>text/html; charset=UTF-8</con:mediaType>
+						<con:status>404</con:status>
+						<con:params/>
+						<con:element>html</con:element>
+					</con:representation>
+					<con:request name="GetDestinyAggregateActivityStats" id="a854932c-f900-4dbf-bad3-2f2b6e4098c8" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:username xsi:nil="true"/>
+							<con:password xsi:nil="true"/>
+							<con:domain xsi:nil="true"/>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<con:entry key="membershipType" value="2"/>
+							<con:entry key="definitions" value="false"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>membershipType</con:entry>
+							<con:entry>definitions</con:entry>
+							<con:entry>characterId</con:entry>
+							<con:entry>destinyMembershipId</con:entry>
+						</con:parameterOrder>
+					</con:request>
+					<con:request name="GetDestinyAggregateActivityStats (with definitions)" id="a854932c-f900-4dbf-bad3-2f2b6e4098c8" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:username xsi:nil="true"/>
+							<con:password xsi:nil="true"/>
+							<con:domain xsi:nil="true"/>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<con:entry key="membershipType" value="2"/>
+							<con:entry key="definitions" value="true"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>membershipType</con:entry>
+							<con:entry>definitions</con:entry>
+							<con:entry>characterId</con:entry>
+							<con:entry>destinyMembershipId</con:entry>
+						</con:parameterOrder>
+					</con:request>
+				</con:method>
+			</con:resource>
+			<con:resource name="Activity history" path="ActivityHistory/{membershipType}/{destinyMembershipId}/{characterId}" id="4914c84b-a20f-4782-96b8-b87381016336">
+				<con:description/>
+				<con:settings/>
+				<con:parameters>
+					<con:parameter required="true">
+						<con:name>membershipType</con:name>
+						<con:value>membershipType</con:value>
+						<con:style>TEMPLATE</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+						<con:default>membershipType</con:default>
+						<con:description>A valid non-BungieNet membership type.</con:description>
+					</con:parameter>
+					<con:parameter required="true">
+						<con:name>destinyMembershipId</con:name>
+						<con:value>destinyMembershipId</con:value>
+						<con:style>TEMPLATE</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:positiveInteger</con:type>
+						<con:default>destinyMembershipId</con:default>
+						<con:description>The Destiny membershipId of the user to retrieve.</con:description>
+					</con:parameter>
+					<con:parameter required="true" disableUrlEncoding="false">
+						<con:name>characterId</con:name>
+						<con:value>characterId</con:value>
+						<con:style>TEMPLATE</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:positiveInteger</con:type>
+						<con:default>characterId</con:default>
+						<con:description>The id of the character to retrieve.</con:description>
+					</con:parameter>
+				</con:parameters>
+				<con:method name="GetActivityHistory" id="06ac1b67-4a6e-4d60-a38a-696bf817d9bd" method="GET">
+					<con:description>Gets activity history stats for indicated character.</con:description>
+					<con:settings/>
+					<con:parameters>
+						<con:parameter>
+							<con:name>definitions</con:name>
+							<con:value/>
+							<con:style>QUERY</con:style>
+							<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:boolean</con:type>
+							<con:default/>
+							<con:description>True if activity definitions should be returned in response.</con:description>
+						</con:parameter>
+						<con:parameter>
+							<con:name>mode</con:name>
+							<con:value/>
+							<con:style>QUERY</con:style>
+							<con:default/>
+							<con:option>None</con:option>
+							<con:option>Story</con:option>
+							<con:option>Strike</con:option>
+							<con:option>Raid</con:option>
+							<con:option>AllPvP</con:option>
+							<con:option>Patrol</con:option>
+							<con:option>AllPvE</con:option>
+							<con:option>PvPIntroduction</con:option>
+							<con:option>ThreeVsThree</con:option>
+							<con:option>Control</con:option>
+							<con:option>Lockdown</con:option>
+							<con:option>Team</con:option>
+							<con:option>FreeForAll</con:option>
+							<con:option>Nightfall</con:option>
+							<con:option>Heroic</con:option>
+							<con:option>AllStrikes</con:option>
+							<con:option>IronBanner</con:option>
+							<con:option>AllArena</con:option>
+							<con:option>Arena</con:option>
+							<con:option>ArenaChallenge</con:option>
+							<con:option>TrialsOfOsiris</con:option>
+							<con:option>Elimination</con:option>
+							<con:description>A filter for the activity mode to be returned. None returns all activities.</con:description>
+						</con:parameter>
+						<con:parameter>
+							<con:name>page</con:name>
+							<con:value/>
+							<con:style>QUERY</con:style>
+							<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:nonNegativeInteger</con:type>
+							<con:default/>
+							<con:description>Page number to return, starting with 0.</con:description>
+						</con:parameter>
+						<con:parameter>
+							<con:name>count</con:name>
+							<con:value/>
+							<con:style>QUERY</con:style>
+							<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+							<con:default/>
+							<con:description>Number of rows to return</con:description>
+						</con:parameter>
+					</con:parameters>
+					<con:representation type="RESPONSE">
+						<con:mediaType>application/json; charset=utf-8</con:mediaType>
+						<con:status>200</con:status>
+						<con:params/>
+						<con:element xmlns:ns="https://www.bungie.net/Platform/Destiny/">ns:Response</con:element>
+					</con:representation>
+					<con:representation type="FAULT">
+						<con:mediaType>text/html; charset=UTF-8</con:mediaType>
+						<con:status>404</con:status>
+						<con:params/>
+						<con:element>html</con:element>
+					</con:representation>
+					<con:request name="GetActivityHistory" id="1440981b-a8be-4ead-8357-38f14d9dba26" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:username xsi:nil="true"/>
+							<con:password xsi:nil="true"/>
+							<con:domain xsi:nil="true"/>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<con:entry key="membershipType" value="2"/>
+							<con:entry key="definitions" value="false"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>definitions</con:entry>
+							<con:entry>mode</con:entry>
+							<con:entry>characterId</con:entry>
+							<con:entry>page</con:entry>
+							<con:entry>count</con:entry>
+							<con:entry>membershipType</con:entry>
+							<con:entry>destinyMembershipId</con:entry>
+						</con:parameterOrder>
+					</con:request>
+					<con:request name="GetActivityHistory (with definitions)" id="1440981b-a8be-4ead-8357-38f14d9dba26" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:username xsi:nil="true"/>
+							<con:password xsi:nil="true"/>
+							<con:domain xsi:nil="true"/>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<con:entry key="membershipType" value="2"/>
+							<con:entry key="definitions" value="true"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>definitions</con:entry>
+							<con:entry>mode</con:entry>
+							<con:entry>characterId</con:entry>
+							<con:entry>page</con:entry>
+							<con:entry>count</con:entry>
+							<con:entry>membershipType</con:entry>
+							<con:entry>destinyMembershipId</con:entry>
+						</con:parameterOrder>
+					</con:request>
+				</con:method>
+			</con:resource>
+			<con:resource name="Post-game carnage report" path="PostGameCarnageReport/{activityId}" id="03c48193-cdfd-4af4-af08-6cf28e4601df">
+				<con:description/>
+				<con:settings/>
+				<con:parameters>
+					<con:parameter required="true">
+						<con:name>activityId</con:name>
+						<con:value>activityId</con:value>
+						<con:style>TEMPLATE</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:integer</con:type>
+						<con:default>activityId</con:default>
+						<con:description>The ID of the activity whose PGCR is requested.</con:description>
+					</con:parameter>
+				</con:parameters>
+				<con:method name="GetPostGameCarnageReport" id="5515db1d-53cc-4c86-a376-3bc401d82fb6" method="GET">
+					<con:description>Gets the available post game carnage report for the activity ID.</con:description>
+					<con:settings/>
+					<con:parameters>
+						<con:parameter>
+							<con:name>definitions</con:name>
+							<con:value/>
+							<con:style>QUERY</con:style>
+							<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:boolean</con:type>
+							<con:default/>
+							<con:description>Client would like activity and weapon definitions returned in response.</con:description>
+						</con:parameter>
+					</con:parameters>
+					<con:request name="GetPostGameCarnageReport" id="2ceae723-edb6-442f-a9a3-f5398ca15781" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<entry key="definitions" value="false" xmlns="http://eviware.com/soapui/config"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>definitions</con:entry>
+							<con:entry>activityId</con:entry>
+						</con:parameterOrder>
+					</con:request>
+					<con:request name="GetPostGameCarnageReport (with definitions)" id="2ceae723-edb6-442f-a9a3-f5398ca15781" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<entry key="definitions" value="true" xmlns="http://eviware.com/soapui/config"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>definitions</con:entry>
+							<con:entry>activityId</con:entry>
+						</con:parameterOrder>
+					</con:request>
+				</con:method>
+			</con:resource>
+			<con:resource name="Unique weapons" path="UniqueWeapons/{membershipType}/{destinyMembershipId}/{characterId}" id="a676ca5f-1700-48e5-9725-fd396aa08612">
+				<con:description/>
+				<con:settings/>
+				<con:parameters>
+					<con:parameter required="true">
+						<con:name>membershipType</con:name>
+						<con:value>membershipType</con:value>
+						<con:style>TEMPLATE</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+						<con:default>membershipType</con:default>
+						<con:description>A valid non-BungieNet membership type.</con:description>
+					</con:parameter>
+					<con:parameter required="true">
+						<con:name>destinyMembershipId</con:name>
+						<con:value>destinyMembershipId</con:value>
+						<con:style>TEMPLATE</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:positiveInteger</con:type>
+						<con:default>destinyMembershipId</con:default>
+						<con:description>The Destiny membershipId of the user to retrieve.</con:description>
+					</con:parameter>
+					<con:parameter required="true">
+						<con:name>characterId</con:name>
+						<con:value>characterId</con:value>
+						<con:style>TEMPLATE</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:positiveInteger</con:type>
+						<con:default>characterId</con:default>
+						<con:description>The id of the character to retrieve.</con:description>
+					</con:parameter>
+				</con:parameters>
+				<con:method name="GetUniqueWeaponHistory" id="5e6924a4-94c9-47bc-b1eb-42a8a5fbaa68" method="GET">
+					<con:description>Gets details about unique weapon usage, including all exotic weapons.</con:description>
+					<con:settings/>
+					<con:parameters>
+						<con:parameter>
+							<con:name>definitions</con:name>
+							<con:value/>
+							<con:style>QUERY</con:style>
+							<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:boolean</con:type>
+							<con:default/>
+							<con:description>True if item definitions should be returned in response.</con:description>
+						</con:parameter>
+					</con:parameters>
+					<con:request name="GetUniqueWeaponHistory" id="c66be4b8-b83a-4e53-83d9-20e78530786a" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<entry key="definitions" value="false" xmlns="http://eviware.com/soapui/config"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>membershipType</con:entry>
+							<con:entry>definitions</con:entry>
+							<con:entry>characterId</con:entry>
+							<con:entry>destinyMembershipId</con:entry>
+						</con:parameterOrder>
+					</con:request>
+					<con:request name="GetUniqueWeaponHistory (with definitions)" id="c66be4b8-b83a-4e53-83d9-20e78530786a" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<entry key="definitions" value="true" xmlns="http://eviware.com/soapui/config"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>membershipType</con:entry>
+							<con:entry>definitions</con:entry>
+							<con:entry>characterId</con:entry>
+							<con:entry>destinyMembershipId</con:entry>
+						</con:parameterOrder>
+					</con:request>
+				</con:method>
+			</con:resource>
+		</con:resource>
+		<con:resource name="Grimoire" path="Vanguard/Grimoire" id="d4d51ba9-07cb-4455-b4a4-499fcf350ad7">
+			<con:settings/>
+			<con:parameters/>
+			<con:resource name="Member grimoire" path="{membershipType}/{membershipId}" id="308d63a8-cf5e-4513-bc6a-1b627d9fb268">
+				<con:description/>
+				<con:settings/>
+				<con:parameters>
+					<con:parameter required="true">
+						<con:name>membershipType</con:name>
+						<con:value>membershipType</con:value>
+						<con:style>TEMPLATE</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+						<con:default>membershipType</con:default>
+						<con:description>A valid membership type.</con:description>
+					</con:parameter>
+					<con:parameter required="true">
+						<con:name>membershipId</con:name>
+						<con:value>membershipId</con:value>
+						<con:style>TEMPLATE</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:integer</con:type>
+						<con:default>membershipId</con:default>
+						<con:description>The membershipId of the user to retrieve.</con:description>
+					</con:parameter>
+					<con:parameter>
+						<con:name>flavour</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:boolean</con:type>
+						<con:default/>
+						<con:description>Indicates flavour stats should be included with player card data.</con:description>
+					</con:parameter>
+					<con:parameter>
+						<con:name>definitions</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:boolean</con:type>
+						<con:default/>
+						<con:description>Indicates the card definition should be returned when player data.</con:description>
+					</con:parameter>
+					<con:parameter>
+						<con:name>single</con:name>
+						<con:value/>
+						<con:style>QUERY</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:boolean</con:type>
+						<con:default/>
+						<con:description>Indicates data for a single card should be returned.</con:description>
+					</con:parameter>
+				</con:parameters>
+				<con:method name="GetGrimoireByMembership" id="c3379c9c-1373-441d-bf51-e72d16c3640a" method="GET">
+					<con:description>Gets someone else's Grimoire.</con:description>
+					<con:settings/>
+					<con:parameters/>
+					<con:representation type="RESPONSE">
+						<con:mediaType>application/json; charset=utf-8</con:mediaType>
+						<con:status>200</con:status>
+						<con:params/>
+						<con:element xmlns:ns="https://www.bungie.net/Platform/Destiny/">ns:Response</con:element>
+					</con:representation>
+					<con:representation type="FAULT">
+						<con:mediaType>text/html; charset=UTF-8</con:mediaType>
+						<con:status>404</con:status>
+						<con:params/>
+						<con:element>html</con:element>
+					</con:representation>
+					<con:request name="GetGrimoireByMembership" id="e095edb0-abe5-4962-a05c-aab56b547676" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<con:entry key="membershipType" value="2"/>
+							<con:entry key="flavour" value="true"/>
+							<con:entry key="definitions" value="false"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>flavour</con:entry>
+							<con:entry>membershipId</con:entry>
+							<con:entry>definitions</con:entry>
+							<con:entry>single</con:entry>
+							<con:entry>membershipType</con:entry>
+						</con:parameterOrder>
+					</con:request>
+					<con:request name="GetGrimoireByMembership (with definitions)" id="e095edb0-abe5-4962-a05c-aab56b547676" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<con:entry key="membershipType" value="2"/>
+							<con:entry key="definitions" value="true"/>
+							<con:entry key="flavour" value="true"/>
+						</con:parameters>
+						<con:parameterOrder>
+							<con:entry>flavour</con:entry>
+							<con:entry>membershipId</con:entry>
+							<con:entry>definitions</con:entry>
+							<con:entry>single</con:entry>
+							<con:entry>membershipType</con:entry>
+						</con:parameterOrder>
+					</con:request>
+				</con:method>
+			</con:resource>
+			<con:resource name="Grimoire definitions" path="Definition" id="e56e76a2-ec52-496c-af50-437aafa4330d">
+				<con:description/>
+				<con:settings/>
+				<con:parameters/>
+				<con:method name="GetGrimoireDefinition" id="4f4b7fca-06e3-4540-8d87-7b33eda8b088" method="GET">
+					<con:description>Gets Grimoire definitions.</con:description>
+					<con:settings/>
+					<con:parameters/>
+					<con:representation type="RESPONSE">
+						<con:mediaType>application/json; charset=utf-8</con:mediaType>
+						<con:status>200</con:status>
+						<con:params/>
+						<con:element xmlns:def="http://www.bungie.net/Platform/Destiny/Vanguard/Grimoire/Definition/">def:Response</con:element>
+					</con:representation>
+					<con:representation type="FAULT">
+						<con:mediaType>text/html; charset=UTF-8</con:mediaType>
+						<con:status>404</con:status>
+						<con:params/>
+						<con:element>html</con:element>
+					</con:representation>
+					<con:request name="GetGrimoireDefinition" id="35f999bb-2f37-436b-ae2e-2e26867f12f8" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters/>
+					</con:request>
+				</con:method>
+			</con:resource>
+		</con:resource>
+		<con:resource name="Membership ID" path="{membershipType}/Stats/GetMembershipIdByDisplayName/{displayName}/" id="ad57e391-d744-41ab-afaf-d486da48848f">
+			<con:description/>
+			<con:settings/>
+			<con:parameters>
+				<con:parameter required="true">
+					<con:name>membershipType</con:name>
+					<con:value>membershipType</con:value>
+					<con:style>TEMPLATE</con:style>
+					<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:int</con:type>
+					<con:default>membershipType</con:default>
+					<con:description>A valid non-BungieNet membership type.</con:description>
+				</con:parameter>
+				<con:parameter required="true">
+					<con:name>displayName</con:name>
+					<con:value>displayName</con:value>
+					<con:style>TEMPLATE</con:style>
+					<con:default>displayName</con:default>
+					<con:description>A display name meeting the parameters of display names for the specified membership type (i.e., a gamertag, or a PSN Id)</con:description>
+				</con:parameter>
+			</con:parameters>
+			<con:method name="GetMembershipIdByDisplayName" id="4b57fc33-7b15-4bc6-a1d8-732e4bf85cc8" method="GET">
+				<con:description>Returns the numerical id of a player based on their display name, zero if not found.</con:description>
+				<con:settings/>
+				<con:parameters>
+					<con:parameter>
+						<con:name>ignorecase</con:name>
+						<con:value>true</con:value>
+						<con:style>QUERY</con:style>
+						<con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:boolean</con:type>
+						<con:default>true</con:default>
+						<con:description>Default is false when not specified. True to cause a caseless search to be used.</con:description>
+					</con:parameter>
+				</con:parameters>
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/json; charset=utf-8</con:mediaType>
+					<con:status>200</con:status>
+					<con:params/>
+					<con:element xmlns:ns="https://www.bungie.net/Platform/Destiny/">ns:Response</con:element>
+				</con:representation>
+				<con:representation type="FAULT">
+					<con:mediaType>text/html; charset=UTF-8</con:mediaType>
+					<con:status>404</con:status>
+					<con:params/>
+					<con:element>html</con:element>
+				</con:representation>
+				<con:request name="GetMembershipIdByDisplayName" id="5f21ef46-b95f-4829-8da4-3a3828bb478a" mediaType="application/json">
+					<con:settings>
+						<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+					</con:settings>
+					<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+					<con:request/>
+					<con:credentials>
+						<con:authType>No Authorization</con:authType>
+					</con:credentials>
+					<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+					<con:jmsPropertyConfig/>
+					<con:parameters>
+						<con:entry key="membershipType" value="2"/>
+						<con:entry key="ignorecase" value="false"/>
+					</con:parameters>
+					<con:parameterOrder>
+						<con:entry>membershipType</con:entry>
+						<con:entry>ignorecase</con:entry>
+						<con:entry>displayName</con:entry>
+					</con:parameterOrder>
+				</con:request>
+				<con:request name="GetMembershipIdByDisplayName (ignore case)" id="5f21ef46-b95f-4829-8da4-3a3828bb478a" mediaType="application/json">
+					<con:settings>
+						<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+					</con:settings>
+					<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+					<con:request/>
+					<con:credentials>
+						<con:authType>No Authorization</con:authType>
+					</con:credentials>
+					<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+					<con:jmsPropertyConfig/>
+					<con:parameters>
+						<entry key="membershipType" value="2" xmlns="http://eviware.com/soapui/config"/>
+					</con:parameters>
+					<con:parameterOrder>
+						<con:entry>membershipType</con:entry>
+						<con:entry>ignorecase</con:entry>
+						<con:entry>displayName</con:entry>
+					</con:parameterOrder>
+				</con:request>
+			</con:method>
+		</con:resource>
+	</con:interface>
+	
+	<con:testSuite id="ae60b3e7-51e0-42c0-b041-1bf502b1b451" name="Statistics">
+		<con:settings/>
+		<con:runType>SEQUENTIAL</con:runType>
+		<con:testCase id="f716834b-cb01-4033-b169-0e54d3f300bf" failOnError="true" failTestCaseOnErrors="true" keepSession="true" maxResults="0" name="Statistics runner" searchProperties="true" discardOkResults="false" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="">
+			<con:description>Calls a test case repeatedly and creates pretty lists with statistics.
+The custom property "usernames" should contain a comma separated list of user names. For each name, a search is performed and the first match found will be used.
+If the custom property "outputfile" is set, the teardown script will try to write the results to that file. Note that any old contents will be overwritten!</con:description><con:settings/>
+			<con:testStep type="groovy" name="Loop" id="74bd18f5-c1d5-461c-8901-924d9739932b">
+				<con:settings/>
+				<con:config><script>import com.eviware.soapui.model.testsuite.TestRunner.Status
+import groovy.json.JsonSlurper
+
+def slurper = new JsonSlurper()
+
+// -------------------------------------
+// Set up data gathering
+
+def tc = testRunner.testCase.testSuite.testCases["Average lifespan"]
+def Closure&lt;String> data = {
+	slurper.parseText(it).basic
+}
+
+// -------------------------------------
+
+// Don't change this
+def id = testRunner.testCase.testSuite.project.testSuites["Statistics"].testCases["Get user id"]
+
+def story = [:]
+def patrol = [:]
+def raid = [:]
+def allPvP = [:]
+def allStrikes = [:]
+
+def users = testRunner.testCase.getPropertyValue("usernames").tokenize(',')*.trim()
+
+for (String user : users) {
+	// get user id
+	id.setPropertyValue("name", user)
+
+	// run test synchrouously
+	def runner = id.run(null, false)
+	def userid = id.getPropertyValue("userid")
+	def type = id.getPropertyValue("type")
+
+	tc.setPropertyValue("userid", userid)
+	tc.setPropertyValue("type", type)
+	tc.run(null, false)
+
+	story.put(user, tc.getPropertyValue("story"))
+	patrol.put(user, tc.getPropertyValue("patrol"))
+	raid.put(user, tc.getPropertyValue("raid"))
+	allPvP.put(user, tc.getPropertyValue("allPvP"))
+	allStrikes.put(user, tc.getPropertyValue("allStrikes"))
+}
+
+StringBuilder output = new StringBuilder()
+
+output.append(format("Story", story, data)).append("\n")
+output.append(format("Patrol", patrol, data)).append("\n")
+output.append(format("Raid", raid, data)).append("\n")
+output.append(format("All strikes", allStrikes, data)).append("\n")
+output.append(format("All PvP", allPvP, data))
+output.append("\n")
+
+def result = output.toString()
+log.info result
+testRunner.testCase.setPropertyValue("result", result) // Used in teardown script
+
+String format(String name, Map&lt;String, String> values, Closure&lt;String> get) {
+	StringBuilder output = new StringBuilder();
+	output.append(sprintf("[b]%s[/b]\n", name))
+
+	// Sort by raw value...
+	values.sort({ a, b -> Double.valueOf(get(b.value).value) &lt;=> Double.valueOf(get(a.value).value) }).each {
+		// ...but display pretty "display value"
+		output.append(sprintf("%s: %s\n", it.key, get(it.value).displayValue))
+	}
+
+	return output.toString();
+}
+</script></con:config>
+			</con:testStep>
+			<con:tearDownScript>def filename = testRunner.testCase.getPropertyValue("outputfile")
+
+if (filename != null) {
+	def outputFile = new File(filename)
+	def result = testRunner.testCase.getPropertyValue("result")
+	outputFile.write(result)
+}
+
+testRunner.testCase.setPropertyValue("result", "")
+			</con:tearDownScript>
+			<con:properties>
+				<con:property>
+					<con:name>usernames</con:name>
+					<con:value>marhaus, powerBlade21, eexzodia1, yo_yogesh, skyfalI_56, PurelyLevi, honsa1987, Redny, al3xan125der313, hectorkiwi</con:value>
+				</con:property>
+				<con:property>
+					<con:name>outputfile</con:name>
+					<con:value>c:\temp\output.txt</con:value>
+				</con:property>
+				<con:property>
+					<con:name>result</con:name>
+					<con:value/>
+				</con:property>
+			</con:properties>
+		</con:testCase>
+		<con:testCase id="43489010-b90e-4da6-8e42-360c561f040e" failOnError="true" failTestCaseOnErrors="true" keepSession="true" maxResults="0" name="Get user id" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="">
+			<con:settings/>
+			<con:testStep type="restrequest" name="Search player" id="6153412a-8e9a-47af-97bd-39e01ce3ce1f">
+				<con:settings/>
+				<con:config service="Bungie.net" methodName="SearchDestinyPlayer" resourcePath="/SearchDestinyPlayer/{membershipType}/{displayName}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+					<con:restRequest name="Search player" id="e488ff99-2890-4b7b-b2de-0784e4646325" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+						</con:settings>
+						<con:encoding>UTF-8</con:encoding>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<con:entry key="membershipType" value="All"/>
+							<con:entry key="displayName" value="${#TestCase#name}"/>
+						</con:parameters>
+					</con:restRequest>
+				</con:config>
+			</con:testStep>
+			<con:testStep type="transfer" name="Save result" id="8021d921-630a-4293-973b-35d0817d5c5e">
+				<con:settings/>
+				<con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+					<con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+						<con:name>userid</con:name>
+						<con:sourceType>Response</con:sourceType>
+						<con:sourceStep>Search player</con:sourceStep>
+						<con:sourcePath>$.Response[0].membershipId</con:sourcePath>
+						<con:targetType>userid</con:targetType>
+						<con:targetStep>#TestCase#</con:targetStep>
+						<con:type>JSONPATH</con:type>
+						<con:upgraded>true</con:upgraded>
+					</con:transfers>
+					<con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" disabled="false" entitize="false" ignoreEmpty="false" transferChildNodes="false" transferToAll="false" useXQuery="false">
+						<con:name>type</con:name>
+						<con:sourceType>Response</con:sourceType>
+						<con:sourceStep>Search player</con:sourceStep>
+						<con:sourcePath>$.Response[0].membershipType</con:sourcePath>
+						<con:targetType>type</con:targetType>
+						<con:targetStep>#TestCase#</con:targetStep>
+						<con:targetPath xsi:nil="true"/>
+						<con:type>JSONPATH</con:type>
+						<con:targetTransferType>XPATH</con:targetTransferType>
+						<con:upgraded>true</con:upgraded>
+					</con:transfers>
+				</con:config>
+			</con:testStep>
+			<con:properties>
+				<con:property>
+					<con:name>name</con:name>
+					<con:value/>
+				</con:property>
+				<con:property>
+					<con:name>userid</con:name>
+					<con:value/>
+				</con:property>
+				<con:property>
+					<con:name>type</con:name>
+					<con:value>2</con:value>
+				</con:property></con:properties>
+		</con:testCase>
+		<con:testCase id="17a8c323-8e1a-401c-98e6-87e31610c7be" failOnError="true" failTestCaseOnErrors="true" keepSession="true" maxResults="0" name="Average lifespan" searchProperties="true" discardOkResults="false" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword="">
+			<con:settings/>
+			<con:testStep type="restrequest" name="REST Request" id="91320b53-2d18-4250-a530-b9475a6874b7">
+				<con:settings/>
+				<con:config service="Bungie.net" resourcePath="/Stats/{membershipType}/{destinyMembershipId}/{characterId}" methodName="GetHistoricalStats" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+					<con:restRequest name="REST Request" id="31b0b392-d8a4-4232-b10f-24612cee8e08" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="X-API-Key" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:setting>
+						</con:settings>
+						<con:endpoint>https://www.bungie.net/Platform/Destiny</con:endpoint>
+						<con:request/>
+						<con:credentials>
+							<con:username xsi:nil="true"/>
+							<con:password xsi:nil="true"/>
+							<con:domain xsi:nil="true"/>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+						<con:jmsPropertyConfig/>
+						<con:parameters>
+							<con:entry key="membershipType" value="${#TestCase#type}"/>
+							<con:entry key="destinyMembershipId" value="${#TestCase#userid}"/>
+							<con:entry key="characterId" value="0"/>
+						</con:parameters>
+					</con:restRequest>
+				</con:config>
+			</con:testStep>
+			<con:testStep type="transfer" name="Values" id="7df6831b-2810-4d89-baca-b3f6d4b24731">
+				<con:settings/>
+				<con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+					<con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+						<con:name>story</con:name>
+						<con:sourceType>Response</con:sourceType>
+						<con:sourceStep>REST Request</con:sourceStep>
+						<con:sourcePath>Response.story.allTime.averageLifespan</con:sourcePath>
+						<con:targetType>story</con:targetType>
+						<con:targetStep>#TestCase#</con:targetStep>
+						<con:targetPath/>
+						<con:type>JSONPATH</con:type>
+						<con:upgraded>true</con:upgraded>
+					</con:transfers>
+					<con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" disabled="false" entitize="false" ignoreEmpty="false" transferChildNodes="false" transferToAll="false" useXQuery="false">
+						<con:name>patrol</con:name>
+						<con:sourceType>Response</con:sourceType>
+						<con:sourceStep>REST Request</con:sourceStep>
+						<con:sourcePath>Response.patrol.allTime.averageLifespan</con:sourcePath>
+						<con:targetType>patrol</con:targetType>
+						<con:targetStep>#TestCase#</con:targetStep>
+						<con:targetPath/>
+						<con:type>JSONPATH</con:type>
+						<con:targetTransferType>XPATH</con:targetTransferType>
+						<con:upgraded>true</con:upgraded>
+					</con:transfers>
+					<con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" disabled="false" entitize="false" ignoreEmpty="false" transferChildNodes="false" transferToAll="false" useXQuery="false">
+						<con:name>raid</con:name>
+						<con:sourceType>Response</con:sourceType>
+						<con:sourceStep>REST Request</con:sourceStep>
+						<con:sourcePath>Response.raid.allTime.averageLifespan</con:sourcePath>
+						<con:targetType>raid</con:targetType>
+						<con:targetStep>#TestCase#</con:targetStep>
+						<con:targetPath/>
+						<con:type>JSONPATH</con:type>
+						<con:targetTransferType>XPATH</con:targetTransferType>
+						<con:upgraded>true</con:upgraded>
+					</con:transfers>
+					<con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" disabled="false" entitize="false" ignoreEmpty="false" transferChildNodes="false" transferToAll="false" useXQuery="false">
+						<con:name>allPvP</con:name>
+						<con:sourceType>Response</con:sourceType>
+						<con:sourceStep>REST Request</con:sourceStep>
+						<con:sourcePath>Response.allPvP.allTime.averageLifespan</con:sourcePath>
+						<con:targetType>allPvP</con:targetType>
+						<con:targetStep>#TestCase#</con:targetStep>
+						<con:targetPath/>
+						<con:type>JSONPATH</con:type>
+						<con:targetTransferType>XPATH</con:targetTransferType>
+						<con:upgraded>true</con:upgraded>
+					</con:transfers>
+					<con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" disabled="false" entitize="false" ignoreEmpty="false" transferChildNodes="false" transferToAll="false" useXQuery="false">
+						<con:name>allStrikes</con:name>
+						<con:sourceType>Response</con:sourceType>
+						<con:sourceStep>REST Request</con:sourceStep>
+						<con:sourcePath>Response.allStrikes.allTime.averageLifespan</con:sourcePath>
+						<con:targetType>allStrikes</con:targetType>
+						<con:targetStep>#TestCase#</con:targetStep>
+						<con:targetPath/>
+						<con:type>JSONPATH</con:type>
+						<con:targetTransferType>XPATH</con:targetTransferType>
+						<con:upgraded>true</con:upgraded>
+					</con:transfers>
+				</con:config>
+			</con:testStep>
+			<con:testStep type="transfer" name="Seconds" id="fcc83559-d125-45e3-9d19-e0690b0ba90d">
+				<con:settings/>
+				<con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+					<con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" disabled="false" entitize="false" ignoreEmpty="false" transferChildNodes="false" transferToAll="false" useXQuery="false">
+						<con:name>story</con:name>
+						<con:sourceType>Response</con:sourceType>
+						<con:sourceStep>REST Request</con:sourceStep>
+						<con:sourcePath>Response.story.allTime.secondsPlayed.pga.value</con:sourcePath>
+						<con:targetType>storysec</con:targetType>
+						<con:targetStep>#TestCase#</con:targetStep>
+						<con:targetPath/>
+						<con:type>JSONPATH</con:type>
+						<con:targetTransferType>XPATH</con:targetTransferType>
+						<con:upgraded>true</con:upgraded>
+					</con:transfers>
+					<con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" disabled="false" entitize="false" ignoreEmpty="false" transferChildNodes="false" transferToAll="false" useXQuery="false">
+						<con:name>patrol</con:name>
+						<con:sourceType>Response</con:sourceType>
+						<con:sourceStep>REST Request</con:sourceStep>
+						<con:sourcePath>Response.patrol.allTime.secondsPlayed.pga.value</con:sourcePath>
+						<con:targetType>patrolsec</con:targetType>
+						<con:targetStep>#TestCase#</con:targetStep>
+						<con:targetPath/>
+						<con:type>JSONPATH</con:type>
+						<con:targetTransferType>XPATH</con:targetTransferType>
+						<con:upgraded>true</con:upgraded>
+					</con:transfers>
+					<con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" disabled="false" entitize="false" ignoreEmpty="false" transferChildNodes="false" transferToAll="false" useXQuery="false">
+						<con:name>raid</con:name>
+						<con:sourceType>Response</con:sourceType>
+						<con:sourceStep>REST Request</con:sourceStep>
+						<con:sourcePath>Response.raid.allTime.secondsPlayed.pga.value</con:sourcePath>
+						<con:targetType>raidsec</con:targetType>
+						<con:targetStep>#TestCase#</con:targetStep>
+						<con:targetPath/>
+						<con:type>JSONPATH</con:type>
+						<con:targetTransferType>XPATH</con:targetTransferType>
+						<con:upgraded>true</con:upgraded>
+					</con:transfers>
+					<con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" disabled="false" entitize="false" ignoreEmpty="false" transferChildNodes="false" transferToAll="false" useXQuery="false">
+						<con:name>allPvP</con:name>
+						<con:sourceType>Response</con:sourceType>
+						<con:sourceStep>REST Request</con:sourceStep>
+						<con:sourcePath>Response.allPvP.allTime.secondsPlayed.pga.value</con:sourcePath>
+						<con:targetType>allPvPsec</con:targetType>
+						<con:targetStep>#TestCase#</con:targetStep>
+						<con:targetPath/>
+						<con:type>JSONPATH</con:type>
+						<con:targetTransferType>XPATH</con:targetTransferType>
+						<con:upgraded>true</con:upgraded>
+					</con:transfers>
+					<con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" disabled="false" entitize="false" ignoreEmpty="false" transferChildNodes="false" transferToAll="false" useXQuery="false">
+						<con:name>allStrikes</con:name>
+						<con:sourceType>Response</con:sourceType>
+						<con:sourceStep>REST Request</con:sourceStep>
+						<con:sourcePath>Response.allStrikes.allTime.secondsPlayed.pga.value</con:sourcePath>
+						<con:targetType>allStrikessec</con:targetType>
+						<con:targetStep>#TestCase#</con:targetStep>
+						<con:targetPath/>
+						<con:type>JSONPATH</con:type>
+						<con:targetTransferType>XPATH</con:targetTransferType>
+						<con:upgraded>true</con:upgraded>
+					</con:transfers>
+				</con:config>
+			</con:testStep>
+			<con:properties>
+				<con:property>
+					<con:name>userid</con:name>
+					<con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+				</con:property>
+				<con:property>
+					<con:name>type</con:name>
+					<con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+				</con:property>
+				<con:property>
+					<con:name>story</con:name>
+					<con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+				</con:property>
+				<con:property>
+					<con:name>patrol</con:name>
+					<con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+				</con:property>
+				<con:property>
+					<con:name>raid</con:name>
+					<con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+				</con:property>
+				<con:property>
+					<con:name>allPvP</con:name>
+					<con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+				</con:property>
+				<con:property>
+					<con:name>allStrikes</con:name>
+					<con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+				</con:property>
+				<con:property>
+					<con:name>storysec</con:name>
+					<con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+				</con:property>
+				<con:property>
+					<con:name>patrolsec</con:name>
+					<con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+				</con:property>
+				<con:property>
+					<con:name>raidsec</con:name>
+					<con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+				</con:property>
+				<con:property>
+					<con:name>allPvPsec</con:name>
+					<con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+				</con:property>
+				<con:property>
+					<con:name>allStrikessec</con:name>
+					<con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+				</con:property>
+			</con:properties>
+		</con:testCase>
+		<con:properties/>
+	</con:testSuite>
+	<con:properties>
+		<con:property>
+			<con:name>apikey</con:name>
+			<con:value>5a16f85f39d24e6d8728d0cc7c701623</con:value>
+		</con:property>
+	</con:properties>
+	<con:wssContainer/>
+	<con:oAuth2ProfileContainer/>
+	<con:sensitiveInformation/>
+</con:soapui-project>
