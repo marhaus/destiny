@@ -1,0 +1,3896 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Bungie.net</title>
+<style type="text/css">
+                    body {
+                        font-family: sans-serif;
+                        font-size: 0.85em;
+                        margin: 2em 8em;
+                    }
+
+                    .methods {
+                        background-color: #ffffff;
+                        padding: 1em;
+                    }
+
+                    pre {
+                        border: dashed 1px;
+                        border-color: #999999;
+                        margin-left: 7px;
+                        padding: 0.5em;
+                        line-height: 150%;
+                        font-family: monospace;
+                        font-size: 12px;
+                        color: #000;
+                    }
+
+                    a:link {
+                        color: #333333;
+                        font-family: Verdana, Arial, Helvetica, sans-serif;
+                        font-size: 12px;
+                    }
+
+                    a:visited {
+                        color: #333333;
+                        color: #333333;
+                        font-family: Verdana, Arial, Helvetica, sans-serif;
+                    }
+
+                    h1 {
+                        margin: 0px 5px 5px;
+                        font: verdana, arial, helvetica;
+                        color: #00cc33;
+                        font-weight: normal;
+                        font-size: 18.0pt;
+                        font-weight: bold;
+                    }
+
+                    h2 {
+                        margin: 0px 0px 5px;
+                        font: verdana, arial, helvetica;
+                        color: #00cc33;
+                        font-weight: normal;
+                        font-size: 14.0pt;
+                        font-weight: bold;
+                    }
+
+                    h3 {
+                        margin: 10px 0px 5px;
+                        font-weight: bold;
+                        font-family: Verdana, Arial, Helvetica, sans-serif;
+                        font-size: 14px;
+                        color: #00cc33;
+                    }
+
+                    h4 {
+                        margin: 0em;
+                        padding: 0em;
+                    }
+
+                    h6 {
+                        font-size: 1.1em;
+                        color: #99a;
+                        margin: 0.5em 0em 0.25em 0em;
+                    }
+
+                    dd {
+                        margin-left: 1em;
+                    }
+
+                    tt {
+                        font-size: 1.2em;
+                    }
+
+                    table {
+                        margin-bottom: 0.5em;
+                    }
+
+                    th {
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size: 12px;
+                        font-weight: bold;
+                        text-align: left;
+                        padding: 5px;
+                        background: #00cc33;
+                        -moz-border-radius:;
+                        width = 150px;
+                    }
+
+                    td {
+                        padding: 3px 6px;
+                        font-weight: normal;
+                        vertical-align: top;
+                        background: #eeeeee;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size: 12px;
+                    }
+
+                    td p {
+                        margin: 0px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size: 12px;
+                    }
+
+                    ul {
+                        padding-left: 1.75em;
+                    }
+
+                    li {
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size: 12px;
+                    }
+
+                    p + ul, p + ol, p + dl {
+                        margin-top: 0em;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-size: 12px;
+                    }
+
+                    .optional {
+                        font-weight: normal;
+                        opacity: 0.75;
+                    }
+                </style>
+</head>
+<body>
+<h1>Bungie.net</h1>
+<ul>
+<li>
+<a href="#resources">Resources</a>
+<ul>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Account">https://www.bungie.net/Platform/Destiny/{membershipType}/Account/{destinyMembershipId}</a>
+<ul>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Character summary">https://www.bungie.net/Platform/Destiny/{membershipType}/Account/{destinyMembershipId}/Character/{characterId}</a>
+<ul>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Progression">https://www.bungie.net/Platform/Destiny/{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Progression</a>
+</li>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Inventory">https://www.bungie.net/Platform/Destiny/{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Inventory</a>
+<ul>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Item details">https://www.bungie.net/Platform/Destiny/{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Inventory/{itemInstanceId}</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Activities">https://www.bungie.net/Platform/Destiny/{membershipType}/Account/{destinyMembershipId}/Character/{characterId}/Activities</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Account summary">https://www.bungie.net/Platform/Destiny/{membershipType}/Account/{destinyMembershipId}/Summary</a>
+</li>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Triumphs">https://www.bungie.net/Platform/Destiny/{membershipType}/Account/{destinyMembershipId}/Triumphs</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Explorer">https://www.bungie.net/Platform/Destiny/Explorer</a>
+<ul>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Items">https://www.bungie.net/Platform/Destiny/Explorer/Items</a>
+</li>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#TalentNodeSteps">https://www.bungie.net/Platform/Destiny/Explorer/TalentNodeSteps</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Manifest">https://www.bungie.net/Platform/Destiny/Manifest</a>
+<ul>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Manifest item">https://www.bungie.net/Platform/Destiny/Manifest/{type}/{id}</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Search player">https://www.bungie.net/Platform/Destiny/SearchDestinyPlayer/{membershipType}/{displayName}</a>
+</li>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Statistics">https://www.bungie.net/Platform/Destiny/Stats</a>
+<ul>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Definition">https://www.bungie.net/Platform/Destiny/Stats/Definition</a>
+</li>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Historical stats for account">https://www.bungie.net/Platform/Destiny/Stats/Account/{membershipType}/{destinyMembershipId}</a>
+</li>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Historical stats for character">https://www.bungie.net/Platform/Destiny/Stats/{membershipType}/{destinyMembershipId}/{characterId}</a>
+</li>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Aggregate activities">https://www.bungie.net/Platform/Destiny/Stats/AggregateActivityStats/{membershipType}/{destinyMembershipId}/{characterId}</a>
+</li>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Activity history">https://www.bungie.net/Platform/Destiny/Stats/ActivityHistory/{membershipType}/{destinyMembershipId}/{characterId}</a>
+</li>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Post-game carnage report">https://www.bungie.net/Platform/Destiny/Stats/PostGameCarnageReport/{activityId}</a>
+</li>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Unique weapons">https://www.bungie.net/Platform/Destiny/Stats/UniqueWeapons/{membershipType}/{destinyMembershipId}/{characterId}</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Grimoire">https://www.bungie.net/Platform/Destiny/Vanguard/Grimoire</a>
+<ul>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Member grimoire">https://www.bungie.net/Platform/Destiny/Vanguard/Grimoire/{membershipType}/{membershipId}</a>
+</li>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Grimoire definitions">https://www.bungie.net/Platform/Destiny/Vanguard/Grimoire/Definition</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#https://www.bungie.net/Platform/Destiny#Membership ID">https://www.bungie.net/Platform/Destiny/{membershipType}/Stats/GetMembershipIdByDisplayName/{displayName}/</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#representations">Representations</a>
+<ul>
+<li>
+<a href="#N200B4">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N200BD">Status Code404-text/html; charset=UTF-8(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</a>
+</li>
+<li>
+<a href="#N20103">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N2010C">Status Code404-text/html; charset=UTF-8(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</a>
+</li>
+<li>
+<a href="#N20121">Status Code200-application/json; charset=utf-8<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20128">Status Code404-text/html; charset=UTF-8<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N202F4">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N202FD">Status Code404-text/html(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</a>
+</li>
+<li>
+<a href="#N203CD">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N203D6">Status Code404-text/html(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</a>
+</li>
+<li>
+<a href="#N20427">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N20430">Status Code404-text/html(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</a>
+</li>
+<li>
+<a href="#N20445">Status Code200-application/json; charset=utf-8<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2044C">Status Code404-text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20484">Status Code200-application/json; charset=utf-8<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2048B">Status Code404-text/html; charset=UTF-8<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N204AF">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N204B8">Status Code404-text/html(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</a>
+</li>
+<li>
+<a href="#N2050C">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N20515">Status Code404-text/html(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</a>
+</li>
+<li>
+<a href="#N2061C">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N20625">Status Code404-text/html; charset=UTF-8(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</a>
+</li>
+<li>
+<a href="#N2067B">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N20684">Status Code404-text/html; charset=UTF-8(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</a>
+</li>
+<li>
+<a href="#N20746">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N2074F">Status Code404-text/html; charset=UTF-8(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</a>
+</li>
+<li>
+<a href="#N2083B">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N20844">Status Code404-text/html; charset=UTF-8(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</a>
+</li>
+<li>
+<a href="#N20861">Status Code200-application/json; charset=utf-8(<abbr title="{http://www.bungie.net/Platform/Destiny/Vanguard/Grimoire/Definition/} Response">def:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N2086A">Status Code404-text/html; charset=UTF-8(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</a>
+</li>
+<li>
+<a href="#N208B3">Status Code200-application/json; charset=utf-8<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N208BA">Status Code404-text/html; charset=UTF-8<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Account">Account</h3>
+<h6>resource-wide template parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>membershipType</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#int">int</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>membershipType</tt>
+</p>
+</td>
+<td>
+<p>A valid non-BungieNet membership type.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>destinyMembershipId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#positiveInteger">positiveInteger</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>destinyMembershipId</tt>
+</p>
+</td>
+<td>
+<p>Destiny membership ID.</p>
+</td>
+</tr>
+</table>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="https://www.bungie.net/Platform/Destiny#GetAccount">GET</h4>
+<p>Returns Destiny account information for the supplied membership.</p>
+<h6>request query parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>definitions</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#boolean">boolean</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>If False, will not return definition information.</p>
+</td>
+</tr>
+</table>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<li>
+<a href="#N20121">Status Code200-application/json; charset=utf-8<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N20128">Status Code404-text/html; charset=UTF-8<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Character summary">Character summary</h3>
+<p>Returns a character summary for the supplied membership.</p>
+<h6>resource-wide template parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>membershipType</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#int">int</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>membershipType</tt>
+</p>
+</td>
+<td>
+<p>A valid non-BungieNet membership type.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>destinyMembershipId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#positiveInteger">positiveInteger</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>destinyMembershipId</tt>
+</p>
+</td>
+<td>
+<p>Destiny membership ID.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>characterId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#positiveInteger">positiveInteger</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>characterId</tt>
+</p>
+</td>
+<td>
+<p>ID of the character.</p>
+</td>
+</tr>
+</table>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="https://www.bungie.net/Platform/Destiny#GetCharacterSummary">GET</h4>
+<h6>request query parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>definitions</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#boolean">boolean</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>If False, will not return definition information.</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Progression">Progression</h3>
+<h6>resource-wide template parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>membershipType</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#int">int</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>membershipType</tt>
+</p>
+</td>
+<td>
+<p>A valid non-BungieNet membership type.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>destinyMembershipId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#positiveInteger">positiveInteger</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>destinyMembershipId</tt>
+</p>
+</td>
+<td>
+<p>Destiny membership ID.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>characterId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#positiveInteger">positiveInteger</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>characterId</tt>
+</p>
+</td>
+<td>
+<p>ID of the character.</p>
+</td>
+</tr>
+</table>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="https://www.bungie.net/Platform/Destiny#GetCharacterProgression">GET</h4>
+<p>Provides the progression details for the supplied character.</p>
+<h6>request query parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>definitions</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#boolean">boolean</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>If False, will not return definition information.</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Inventory">Inventory</h3>
+<h6>resource-wide template parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>membershipType</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#int">int</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>membershipType</tt>
+</p>
+</td>
+<td>
+<p>A valid non-BungieNet membership type.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>destinyMembershipId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#positiveInteger">positiveInteger</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>destinyMembershipId</tt>
+</p>
+</td>
+<td>
+<p>Destiny membership ID.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>characterId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#positiveInteger">positiveInteger</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>characterId</tt>
+</p>
+</td>
+<td>
+<p>ID of the character.</p>
+</td>
+</tr>
+</table>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="https://www.bungie.net/Platform/Destiny#GetCharacterInventory">GET</h4>
+<p>Returns the inventory for the supplied character.</p>
+<h6>request query parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>definitions</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#boolean">boolean</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>If False, will not return definition information.</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Item details">Item details</h3>
+<h6>resource-wide template parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>membershipType</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#int">int</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>membershipType</tt>
+</p>
+</td>
+<td>
+<p>A valid non-BungieNet membership type.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>destinyMembershipId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#positiveInteger">positiveInteger</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>destinyMembershipId</tt>
+</p>
+</td>
+<td>
+<p>Destiny membership ID.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>characterId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#positiveInteger">positiveInteger</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>characterId</tt>
+</p>
+</td>
+<td>
+<p>ID of the character.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>itemInstanceId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#integer">integer</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>itemInstanceId</tt>
+</p>
+</td>
+<td>
+<p>The Instance ID of the destiny item. Not the Reference ID, pay attention.</p>
+</td>
+</tr>
+</table>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="https://www.bungie.net/Platform/Destiny#GetItemDetail">GET</h4>
+<p>Retrieve the details of a Destiny Item.</p>
+<h6>request query parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>definitions</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#boolean">boolean</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>If False, will not return definition information.</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Activities">Activities</h3>
+<h6>resource-wide template parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>membershipType</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#int">int</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>membershipType</tt>
+</p>
+</td>
+<td>
+<p>A valid non-BungieNet membership type.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>destinyMembershipId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#positiveInteger">positiveInteger</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>destinyMembershipId</tt>
+</p>
+</td>
+<td>
+<p>Destiny membership ID.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>characterId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#positiveInteger">positiveInteger</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>characterId</tt>
+</p>
+</td>
+<td>
+<p>ID of the character.</p>
+</td>
+</tr>
+</table>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="https://www.bungie.net/Platform/Destiny#GetCharacterActivities">GET</h4>
+<p>Retrieve the activity for the supplied character.</p>
+<h6>request query parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>definitions</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#boolean">boolean</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>If False, will not return definition information.</p>
+</td>
+</tr>
+</table>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<li>
+<a href="#N200B4">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N200BD">Status Code404-text/html; charset=UTF-8(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Account summary">Account summary</h3>
+<h6>resource-wide template parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>membershipType</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#int">int</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>membershipType</tt>
+</p>
+</td>
+<td>
+<p>A valid non-BungieNet membership type.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>destinyMembershipId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#positiveInteger">positiveInteger</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>destinyMembershipId</tt>
+</p>
+</td>
+<td>
+<p>Destiny membership ID.</p>
+</td>
+</tr>
+</table>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="https://www.bungie.net/Platform/Destiny#GetDestinyAccountSummary">GET</h4>
+<p>Returns Destiny account summary information for the supplied membership.</p>
+<h6>request query parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>definitions</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#boolean">boolean</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>If False, will not return definition information.</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Triumphs">Triumphs</h3>
+<h6>resource-wide template parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>membershipType</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#int">int</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>membershipType</tt>
+</p>
+</td>
+<td>
+<p>A valid non-BungieNet membership type.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>destinyMembershipId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#positiveInteger">positiveInteger</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>destinyMembershipId</tt>
+</p>
+</td>
+<td>
+<p>Destiny membership ID.</p>
+</td>
+</tr>
+</table>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="https://www.bungie.net/Platform/Destiny#GetTriumphs">GET</h4>
+<p>Provides Triumphs for a given Destiny account.</p>
+<h6>request query parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>definitions</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#boolean">boolean</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>If False, will not return definition information.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>definitions</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#boolean">boolean</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<li>
+<a href="#N20103">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N2010C">Status Code404-text/html; charset=UTF-8(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Explorer">Explorer</h3>
+<h6>Methods</h6>
+<div class="methods" />
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Items">Items</h3>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="https://www.bungie.net/Platform/Destiny#GetDestinyExplorerItems">GET</h4>
+<p>Gets a page list of Destiny items.</p>
+<h6>request query parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>count</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#int">int</a>
+</em>
+<small>(required)</small>
+</p>
+<p>
+<em>One of:</em>
+</p>
+<ul>
+<li>
+<tt>10</tt>
+</li>
+<li>
+<tt>25</tt>
+</li>
+<li>
+<tt>50</tt>
+</li>
+<li>
+<tt>100</tt>
+</li>
+<li>
+<tt>500</tt>
+<small>(default)</small>
+</li>
+</ul>
+</td>
+<td>
+<p>Number of rows to return.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>page</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#int">int</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>0</tt>
+</p>
+</td>
+<td>
+<p>Page number to return, starting with 0.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>name</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>Name of items to return (partial match, no case). Omit for all items.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>order</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+<small>(required)</small>
+</p>
+<p>
+<em>One of:</em>
+</p>
+<ul>
+<li>
+<tt>Name</tt>
+<small>(default)</small>
+</li>
+<li>
+<tt>ItemType</tt>
+</li>
+<li>
+<tt>Rarity</tt>
+</li>
+<li>
+<tt>ItemTypeName</tt>
+</li>
+<li>
+<tt>ItemStatHash</tt>
+</li>
+<li>
+<tt>MinimumRequiredLevel</tt>
+</li>
+<li>
+<tt>MaximumRequiredLevel</tt>
+</li>
+</ul>
+</td>
+<td>
+<p>Item property used for sorting.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>orderstathash</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>This value is used when the order parameter is set to ItemStatHash. The item stat for the provided hash value will be used in the sort.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>direction</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+<small>(required)</small>
+</p>
+<p>
+<em>One of:</em>
+</p>
+<ul>
+<li>
+<tt>Ascending</tt>
+</li>
+<li>
+<tt>Descending</tt>
+</li>
+</ul>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>definitions</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>Indicates the item definitions should be returned with item hash results.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>step</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>Hash ID of the talent node step that an item must have in order to be returned.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>categories</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>Category identifiers. Only items that are in all of the passed-in categories will be returned.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>rarity</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>
+<em>One of:</em>
+</p>
+<ul>
+<li>
+<tt>Currency</tt>
+</li>
+<li>
+<tt>Basic</tt>
+</li>
+<li>
+<tt>Common</tt>
+</li>
+<li>
+<tt>Rare</tt>
+</li>
+<li>
+<tt>Superior</tt>
+</li>
+<li>
+<tt>Exotic</tt>
+</li>
+</ul>
+</td>
+<td>
+<p>Rarity of items to return. Omit for all items.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>weaponPerformance</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>
+<em>One of:</em>
+</p>
+<ul>
+<li>
+<tt>RateOfFire</tt>
+</li>
+<li>
+<tt>Damage</tt>
+</li>
+<li>
+<tt>Accuracy</tt>
+</li>
+<li>
+<tt>Range</tt>
+</li>
+<li>
+<tt>Zoom</tt>
+</li>
+<li>
+<tt>Recoil</tt>
+</li>
+<li>
+<tt>Ready</tt>
+</li>
+<li>
+<tt>Reload</tt>
+</li>
+<li>
+<tt>HairTrigger</tt>
+</li>
+<li>
+<tt>AmmoAndMagazine</tt>
+</li>
+<li>
+<tt>TrackingAndDetonation</tt>
+</li>
+<li>
+<tt>ShotgunSpread</tt>
+</li>
+<li>
+<tt>ChargeTime</tt>
+</li>
+</ul>
+</td>
+<td>
+<p>Items must have node steps in one of these categories, omit for all items.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>impactEffects</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>
+<em>One of:</em>
+</p>
+<ul>
+<li>
+<tt>ArmorPiercing</tt>
+</li>
+<li>
+<tt>Ricochet</tt>
+</li>
+<li>
+<tt>Flinch</tt>
+</li>
+<li>
+<tt>CollateralDamage</tt>
+</li>
+<li>
+<tt>Disorient</tt>
+</li>
+<li>
+<tt>HighlightTarget</tt>
+</li>
+</ul>
+</td>
+<td>
+<p>Items must have node steps in one of these categories, omit for all items.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>guardianAttributes</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>
+<em>One of:</em>
+</p>
+<ul>
+<li>
+<tt>Stats</tt>
+</li>
+<li>
+<tt>Shields</tt>
+</li>
+<li>
+<tt>Health</tt>
+</li>
+<li>
+<tt>Revive</tt>
+</li>
+<li>
+<tt>AimUnderFire</tt>
+</li>
+<li>
+<tt>Radar</tt>
+</li>
+<li>
+<tt>Invisibility</tt>
+</li>
+<li>
+<tt>Reputations</tt>
+</li>
+</ul>
+</td>
+<td>
+<p>Items must have node steps in one of these categories, omit for all items.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>lightAbilities</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>
+<em>One of:</em>
+</p>
+<ul>
+<li>
+<tt>Grenades</tt>
+</li>
+<li>
+<tt>Melee</tt>
+</li>
+<li>
+<tt>MovementModes</tt>
+</li>
+<li>
+<tt>Orbs</tt>
+</li>
+<li>
+<tt>SuperEnergy</tt>
+</li>
+<li>
+<tt>SuperMods</tt>
+</li>
+</ul>
+</td>
+<td>
+<p>Items must have node steps in one of these categories, omit for all items.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>damageTypes</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>
+<em>One of:</em>
+</p>
+<ul>
+<li>
+<tt>Kinetic</tt>
+</li>
+<li>
+<tt>Arc</tt>
+</li>
+<li>
+<tt>Solar</tt>
+</li>
+<li>
+<tt>Void</tt>
+</li>
+</ul>
+</td>
+<td>
+<p>Items must have node steps in one of these categories, omit for all items.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>sourcecat</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>
+<em>One of:</em>
+</p>
+<ul>
+<li>
+<tt>Vendor</tt>
+</li>
+<li>
+<tt>Activity</tt>
+</li>
+</ul>
+</td>
+<td>
+<p>Items must drop from the specified source category, omit for all items.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>sourcehash</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>Items must drop from the specified source, omit for all items. Overrides sourcecat.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>matchrandomsteps</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>True if the supplied groups/step hash filters should match random node steps. False indicates the item can always get the step before it is considered a match.</p>
+</td>
+</tr>
+</table>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<li>
+<a href="#N202F4">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N202FD">Status Code404-text/html(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#TalentNodeSteps">TalentNodeSteps</h3>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="https://www.bungie.net/Platform/Destiny#GetDestinyExplorerTalentNodeSteps">GET</h4>
+<p>Gets a page list of Destiny talent node steps, ordered by the step name.</p>
+<h6>request query parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>guardianAttributes</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>
+<em>One of:</em>
+</p>
+<ul>
+<li>
+<tt>Stats</tt>
+</li>
+<li>
+<tt>Shields</tt>
+</li>
+<li>
+<tt>Health</tt>
+</li>
+<li>
+<tt>Revive</tt>
+</li>
+<li>
+<tt>AimUnderFire</tt>
+</li>
+<li>
+<tt>Radar</tt>
+</li>
+<li>
+<tt>Invisibility</tt>
+</li>
+<li>
+<tt>Reputations</tt>
+</li>
+</ul>
+</td>
+<td>
+<p>Node steps in one of these categories, omit for all steps.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>count</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#int">int</a>
+</em>
+</p>
+<p>
+<em>One of:</em>
+</p>
+<ul>
+<li>
+<tt>10</tt>
+</li>
+<li>
+<tt>25</tt>
+</li>
+<li>
+<tt>50</tt>
+</li>
+<li>
+<tt>100</tt>
+</li>
+<li>
+<tt>500</tt>
+</li>
+</ul>
+</td>
+<td>
+<p>Number of rows to return.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>direction</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>
+<em>One of:</em>
+</p>
+<ul>
+<li>
+<tt>Ascending</tt>
+</li>
+<li>
+<tt>Descending</tt>
+</li>
+</ul>
+</td>
+<td>
+<p>Order to sort steps (by name).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>impactEffects</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#anySimpleType">anySimpleType</a>
+</em>
+</p>
+<p>
+<em>One of:</em>
+</p>
+<ul>
+<li>
+<tt>ArmorPiercing</tt>
+</li>
+<li>
+<tt>Ricochet</tt>
+</li>
+<li>
+<tt>Flinch</tt>
+</li>
+<li>
+<tt>CollateralDamage</tt>
+</li>
+<li>
+<tt>Disorient</tt>
+</li>
+<li>
+<tt>HighlightTarget</tt>
+</li>
+</ul>
+</td>
+<td>
+<p>Node steps in one of these categories, omit for all steps.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>definitions</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#boolean">boolean</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>Indicates the step definitions should be returned with item hash results.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>page</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger">nonNegativeInteger</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>Page number to return, starting with 0.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>name</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>lightAbilities</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>weaponPerformance</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td />
+</tr>
+<tr>
+<td>
+<p>
+<strong>damageTypes</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td />
+</tr>
+</table>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<li>
+<a href="#N203CD">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N203D6">Status Code404-text/html(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Manifest">Manifest</h3>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="https://www.bungie.net/Platform/Destiny#GetDestinyManifest">GET</h4>
+<p>Returns the current version of the manifest as a json object.</p>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<li>
+<a href="#N20445">Status Code200-application/json; charset=utf-8<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2044C">Status Code404-text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Manifest item">Manifest item</h3>
+<h6>resource-wide template parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>type</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>type</tt>
+</p>
+</td>
+<td>
+<p>The type of definition to return.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>id</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#integer">integer</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>id</tt>
+</p>
+</td>
+<td>
+<p>The hash ID of the definition instance.</p>
+</td>
+</tr>
+</table>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="https://www.bungie.net/Platform/Destiny#GetDestinySingleDefinition">GET</h4>
+<p>Returns the specific item from the current manifest a json object.</p>
+<h6>request query parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>definitions</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#boolean">boolean</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>If true, related definitions will be returned.</p>
+</td>
+</tr>
+</table>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<li>
+<a href="#N20427">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N20430">Status Code404-text/html(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Search player">Search player</h3>
+<h6>resource-wide template parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>membershipType</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>membershipType</tt>
+</p>
+</td>
+<td>
+<p>A valid non-BungieNet membership type, or All.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>displayName</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>displayName</tt>
+</p>
+</td>
+<td>
+<p>The full gamertag or PSN id of the player. Spaces and case are ignored.</p>
+</td>
+</tr>
+</table>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="https://www.bungie.net/Platform/Destiny#SearchDestinyPlayer">GET</h4>
+<p>Returns a list of Destiny memberships given a full Gamertag or PSN ID.</p>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<li>
+<a href="#N20484">Status Code200-application/json; charset=utf-8<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N2048B">Status Code404-text/html; charset=UTF-8<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Statistics">Statistics</h3>
+<h6>Methods</h6>
+<div class="methods" />
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Definition">Definition</h3>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="https://www.bungie.net/Platform/Destiny#GetHistoricalStatsDefinition">GET</h4>
+<p>Gets historical stats definitions.</p>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<li>
+<a href="#N204AF">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N204B8">Status Code404-text/html(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Historical stats for account">Historical stats for account</h3>
+<h6>resource-wide template parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>membershipType</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#int">int</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>membershipType</tt>
+</p>
+</td>
+<td>
+<p>A valid non-BungieNet membership type.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>destinyMembershipId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#positiveInteger">positiveInteger</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>destinyMembershipId</tt>
+</p>
+</td>
+<td>
+<p>The Destiny membershipId of the user to retrieve.</p>
+</td>
+</tr>
+</table>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="https://www.bungie.net/Platform/Destiny#GetHistoricalStatsForAccount">GET</h4>
+<p>Gets aggregate historical stats organized around each character for a given account.</p>
+<h6>request query parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>groups</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>
+<em>One of:</em>
+</p>
+<ul>
+<li>
+<tt>General</tt>
+</li>
+<li>
+<tt>Weapons</tt>
+</li>
+<li>
+<tt>Medals</tt>
+</li>
+<li>
+<tt>Enemies</tt>
+</li>
+</ul>
+</td>
+<td>
+<p>Groups of stats to include, otherwise only general stats are returned. Comma separated list is allowed.</p>
+</td>
+</tr>
+</table>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<li>
+<a href="#N2050C">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N20515">Status Code404-text/html(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Historical stats for character">Historical stats for character</h3>
+<h6>resource-wide template parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>membershipType</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>membershipType</tt>
+</p>
+</td>
+<td>
+<p>A valid non-BungieNet membership type.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>destinyMembershipId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>destinyMembershipId</tt>
+</p>
+</td>
+<td>
+<p>The Destiny membershipId of the user to retrieve.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>characterId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>characterId</tt>
+</p>
+</td>
+<td>
+<p>The id of the character to retrieve. You can omit this character ID or set it to 0 to get aggregate stats across all characters.</p>
+</td>
+</tr>
+</table>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="https://www.bungie.net/Platform/Destiny#GetHistoricalStats">GET</h4>
+<p>Gets historical stats for indicated character.</p>
+<h6>request query parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>periodType</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>
+<em>One of:</em>
+</p>
+<ul>
+<li>
+<tt>Daily</tt>
+</li>
+<li>
+<tt>Monthly</tt>
+</li>
+<li>
+<tt>AllTime</tt>
+</li>
+<li>
+<tt>Activity</tt>
+</li>
+</ul>
+</td>
+<td>
+<p>Indicates a specific period type to return. Optional.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>modes</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>
+<em>One of:</em>
+</p>
+<ul>
+<li>
+<tt />
+<small>(default)</small>
+</li>
+<li>
+<tt>None</tt>
+</li>
+<li>
+<tt>Story</tt>
+</li>
+<li>
+<tt>Strike</tt>
+</li>
+<li>
+<tt>Raid</tt>
+</li>
+<li>
+<tt>AllPvP</tt>
+</li>
+<li>
+<tt>Patrol</tt>
+</li>
+<li>
+<tt>AllPvE</tt>
+</li>
+<li>
+<tt>PvPIntroduction</tt>
+</li>
+<li>
+<tt>ThreeVsThree</tt>
+</li>
+<li>
+<tt>Control</tt>
+</li>
+<li>
+<tt>Lockdown</tt>
+</li>
+<li>
+<tt>Team</tt>
+</li>
+<li>
+<tt>FreeForAll</tt>
+</li>
+<li>
+<tt>Nightfall</tt>
+</li>
+<li>
+<tt>Heroic</tt>
+</li>
+<li>
+<tt>AllStrikes</tt>
+</li>
+<li>
+<tt>IronBanner</tt>
+</li>
+<li>
+<tt>IronBanner</tt>
+</li>
+<li>
+<tt>Arena</tt>
+</li>
+<li>
+<tt>ArenaChallenge</tt>
+</li>
+<li>
+<tt>TrialsOfOsiris</tt>
+</li>
+<li>
+<tt>Elimination</tt>
+</li>
+</ul>
+</td>
+<td>
+<p>Game modes to return.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>monthstart</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#gYearMonth">gYearMonth</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>First month to return when monthly stats are requested. Use the format YYYY-MM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>monthend</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#gYearMonth">gYearMonth</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>Last month to return when monthly stats are requested. Use the format YYYY-MM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>dayend</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#date">date</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>Last day to return when daily stats are requested. Use the format YYYY-MM-DD.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>daystart</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#date">date</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>First day to return when daily stats are requested. Use the format YYYY-MM-DD</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>groups</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>
+<em>One of:</em>
+</p>
+<ul>
+<li>
+<tt>General</tt>
+</li>
+<li>
+<tt>Weapons</tt>
+</li>
+<li>
+<tt>Medals</tt>
+</li>
+<li>
+<tt>Enemies</tt>
+</li>
+</ul>
+</td>
+<td>
+<p>Group of stats to include, otherwise only general stats are returned. Comma separated list is allowed.</p>
+</td>
+</tr>
+</table>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<li>
+<a href="#N2061C">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N20625">Status Code404-text/html; charset=UTF-8(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Aggregate activities">Aggregate activities</h3>
+<h6>resource-wide template parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>membershipType</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#int">int</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>membershipType</tt>
+</p>
+</td>
+<td>
+<p>A valid non-BungieNet membership type.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>destinyMembershipId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#positiveInteger">positiveInteger</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>destinyMembershipId</tt>
+</p>
+</td>
+<td>
+<p>The Destiny membershipId of the user to retrieve.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>characterId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#positiveInteger">positiveInteger</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>characterId</tt>
+</p>
+</td>
+<td>
+<p>The specific character whose activities should be returned.</p>
+</td>
+</tr>
+</table>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="https://www.bungie.net/Platform/Destiny#GetDestinyAggregateActivityStats">GET</h4>
+<p>Gets all activities the character has participated in together with aggregate statistics for those activities.</p>
+<h6>request query parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>definitions</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#boolean">boolean</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>Client would like activity definition returned in response.</p>
+</td>
+</tr>
+</table>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<li>
+<a href="#N2067B">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N20684">Status Code404-text/html; charset=UTF-8(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Activity history">Activity history</h3>
+<h6>resource-wide template parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>membershipType</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#int">int</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>membershipType</tt>
+</p>
+</td>
+<td>
+<p>A valid non-BungieNet membership type.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>destinyMembershipId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#positiveInteger">positiveInteger</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>destinyMembershipId</tt>
+</p>
+</td>
+<td>
+<p>The Destiny membershipId of the user to retrieve.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>characterId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#positiveInteger">positiveInteger</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>characterId</tt>
+</p>
+</td>
+<td>
+<p>The id of the character to retrieve.</p>
+</td>
+</tr>
+</table>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="https://www.bungie.net/Platform/Destiny#GetActivityHistory">GET</h4>
+<p>Gets activity history stats for indicated character.</p>
+<h6>request query parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>definitions</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#boolean">boolean</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>True if activity definitions should be returned in response.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>mode</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+</p>
+<p>
+<em>One of:</em>
+</p>
+<ul>
+<li>
+<tt>None</tt>
+</li>
+<li>
+<tt>Story</tt>
+</li>
+<li>
+<tt>Strike</tt>
+</li>
+<li>
+<tt>Raid</tt>
+</li>
+<li>
+<tt>AllPvP</tt>
+</li>
+<li>
+<tt>Patrol</tt>
+</li>
+<li>
+<tt>AllPvE</tt>
+</li>
+<li>
+<tt>PvPIntroduction</tt>
+</li>
+<li>
+<tt>ThreeVsThree</tt>
+</li>
+<li>
+<tt>Control</tt>
+</li>
+<li>
+<tt>Lockdown</tt>
+</li>
+<li>
+<tt>Team</tt>
+</li>
+<li>
+<tt>FreeForAll</tt>
+</li>
+<li>
+<tt>Nightfall</tt>
+</li>
+<li>
+<tt>Heroic</tt>
+</li>
+<li>
+<tt>AllStrikes</tt>
+</li>
+<li>
+<tt>IronBanner</tt>
+</li>
+<li>
+<tt>AllArena</tt>
+</li>
+<li>
+<tt>Arena</tt>
+</li>
+<li>
+<tt>ArenaChallenge</tt>
+</li>
+<li>
+<tt>TrialsOfOsiris</tt>
+</li>
+<li>
+<tt>Elimination</tt>
+</li>
+</ul>
+</td>
+<td>
+<p>A filter for the activity mode to be returned. None returns all activities.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>page</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger">nonNegativeInteger</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>Page number to return, starting with 0.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>count</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#int">int</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>Number of rows to return</p>
+</td>
+</tr>
+</table>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<li>
+<a href="#N20746">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N2074F">Status Code404-text/html; charset=UTF-8(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Post-game carnage report">Post-game carnage report</h3>
+<h6>resource-wide template parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>activityId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#integer">integer</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>activityId</tt>
+</p>
+</td>
+<td>
+<p>The ID of the activity whose PGCR is requested.</p>
+</td>
+</tr>
+</table>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="https://www.bungie.net/Platform/Destiny#GetPostGameCarnageReport">GET</h4>
+<p>Gets the available post game carnage report for the activity ID.</p>
+<h6>request query parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>definitions</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#boolean">boolean</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>Client would like activity and weapon definitions returned in response.</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Unique weapons">Unique weapons</h3>
+<h6>resource-wide template parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>membershipType</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#int">int</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>membershipType</tt>
+</p>
+</td>
+<td>
+<p>A valid non-BungieNet membership type.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>destinyMembershipId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#positiveInteger">positiveInteger</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>destinyMembershipId</tt>
+</p>
+</td>
+<td>
+<p>The Destiny membershipId of the user to retrieve.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>characterId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#positiveInteger">positiveInteger</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>characterId</tt>
+</p>
+</td>
+<td>
+<p>The id of the character to retrieve.</p>
+</td>
+</tr>
+</table>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="https://www.bungie.net/Platform/Destiny#GetUniqueWeaponHistory">GET</h4>
+<p>Gets details about unique weapon usage, including all exotic weapons.</p>
+<h6>request query parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>definitions</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#boolean">boolean</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>True if item definitions should be returned in response.</p>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Grimoire">Grimoire</h3>
+<h6>Methods</h6>
+<div class="methods" />
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Member grimoire">Member grimoire</h3>
+<h6>resource-wide template parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>membershipType</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#int">int</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>membershipType</tt>
+</p>
+</td>
+<td>
+<p>A valid membership type.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>membershipId</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#integer">integer</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>membershipId</tt>
+</p>
+</td>
+<td>
+<p>The membershipId of the user to retrieve.</p>
+</td>
+</tr>
+</table>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="https://www.bungie.net/Platform/Destiny#GetGrimoireByMembership">GET</h4>
+<p>Gets someone else's Grimoire.</p>
+<h6>request query parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>flavour</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#boolean">boolean</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>Indicates flavour stats should be included with player card data.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>definitions</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#boolean">boolean</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>Indicates the card definition should be returned when player data.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>single</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#boolean">boolean</a>
+</em>
+</p>
+<p>Default:
+                                <tt />
+</p>
+</td>
+<td>
+<p>Indicates data for a single card should be returned.</p>
+</td>
+</tr>
+</table>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<li>
+<a href="#N2083B">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N20844">Status Code404-text/html; charset=UTF-8(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Grimoire definitions">Grimoire definitions</h3>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="https://www.bungie.net/Platform/Destiny#GetGrimoireDefinition">GET</h4>
+<p>Gets Grimoire definitions.</p>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<li>
+<a href="#N20861">Status Code200-application/json; charset=utf-8(<abbr title="{http://www.bungie.net/Platform/Destiny/Vanguard/Grimoire/Definition/} Response">def:Response</abbr>)</a>
+</li>
+<li>
+<a href="#N2086A">Status Code404-text/html; charset=UTF-8(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="resource">
+<h3 id="https://www.bungie.net/Platform/Destiny#Membership ID">Membership ID</h3>
+<h6>resource-wide template parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>membershipType</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#int">int</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>membershipType</tt>
+</p>
+</td>
+<td>
+<p>A valid non-BungieNet membership type.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>
+<strong>displayName</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#string">string</a>
+</em>
+<small>(required)</small>
+</p>
+<p>Default:
+                                <tt>displayName</tt>
+</p>
+</td>
+<td>
+<p>A display name meeting the parameters of display names for the specified membership type (i.e., a gamertag, or a PSN Id)</p>
+</td>
+</tr>
+</table>
+<h6>Methods</h6>
+<div class="methods">
+<div class="method">
+<h4 id="https://www.bungie.net/Platform/Destiny#GetMembershipIdByDisplayName">GET</h4>
+<p>Returns the numerical id of a player based on their display name, zero if not found.</p>
+<h6>request query parameters
+            </h6>
+<table>
+<tr>
+<th>parameter</th>
+<th>value</th>
+<th>description</th>
+</tr>
+<tr>
+<td>
+<p>
+<strong>ignorecase</strong>
+</p>
+</td>
+<td>
+<p>
+<em>
+<a href="http://www.w3.org/TR/xmlschema-2/#boolean">boolean</a>
+</em>
+</p>
+<p>Default:
+                                <tt>true</tt>
+</p>
+</td>
+<td>
+<p>Default is false when not specified. True to cause a caseless search to be used.</p>
+</td>
+</tr>
+</table>
+<p>
+<em>available response representations:</em>
+</p>
+<ul>
+<li>
+<a href="#N208B3">Status Code200-application/json; charset=utf-8<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+<li>
+<a href="#N208BA">Status Code404-text/html; charset=UTF-8<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<h2 id="representations">Representations</h2>
+<h3 id="N200B4">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source:
+                <a href="" />
+</em>
+</p>
+<pre />
+</div>
+<h3 id="N200BD">Status Code404-text/html; charset=UTF-8(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source:
+                <a href="" />
+</em>
+</p>
+<pre />
+</div>
+<h3 id="N20103">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source:
+                <a href="" />
+</em>
+</p>
+<pre />
+</div>
+<h3 id="N2010C">Status Code404-text/html; charset=UTF-8(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source:
+                <a href="" />
+</em>
+</p>
+<pre />
+</div>
+<h3 id="N20121">Status Code200-application/json; charset=utf-8<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20128">Status Code404-text/html; charset=UTF-8<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N202F4">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source:
+                <a href="" />
+</em>
+</p>
+<pre />
+</div>
+<h3 id="N202FD">Status Code404-text/html(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source:
+                <a href="" />
+</em>
+</p>
+<pre />
+</div>
+<h3 id="N203CD">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source:
+                <a href="" />
+</em>
+</p>
+<pre />
+</div>
+<h3 id="N203D6">Status Code404-text/html(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source:
+                <a href="" />
+</em>
+</p>
+<pre />
+</div>
+<h3 id="N20427">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source:
+                <a href="" />
+</em>
+</p>
+<pre />
+</div>
+<h3 id="N20430">Status Code404-text/html(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source:
+                <a href="" />
+</em>
+</p>
+<pre />
+</div>
+<h3 id="N20445">Status Code200-application/json; charset=utf-8<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2044C">Status Code404-text/html<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N20484">Status Code200-application/json; charset=utf-8<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N2048B">Status Code404-text/html; charset=UTF-8<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N204AF">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source:
+                <a href="" />
+</em>
+</p>
+<pre />
+</div>
+<h3 id="N204B8">Status Code404-text/html(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source:
+                <a href="" />
+</em>
+</p>
+<pre />
+</div>
+<h3 id="N2050C">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source:
+                <a href="" />
+</em>
+</p>
+<pre />
+</div>
+<h3 id="N20515">Status Code404-text/html(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source:
+                <a href="" />
+</em>
+</p>
+<pre />
+</div>
+<h3 id="N2061C">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source:
+                <a href="" />
+</em>
+</p>
+<pre />
+</div>
+<h3 id="N20625">Status Code404-text/html; charset=UTF-8(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source:
+                <a href="" />
+</em>
+</p>
+<pre />
+</div>
+<h3 id="N2067B">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source:
+                <a href="" />
+</em>
+</p>
+<pre />
+</div>
+<h3 id="N20684">Status Code404-text/html; charset=UTF-8(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source:
+                <a href="" />
+</em>
+</p>
+<pre />
+</div>
+<h3 id="N20746">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source:
+                <a href="" />
+</em>
+</p>
+<pre />
+</div>
+<h3 id="N2074F">Status Code404-text/html; charset=UTF-8(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source:
+                <a href="" />
+</em>
+</p>
+<pre />
+</div>
+<h3 id="N2083B">Status Code200-application/json; charset=utf-8(<abbr title="{https://www.bungie.net/Platform/Destiny/} Response">des:Response</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source:
+                <a href="" />
+</em>
+</p>
+<pre />
+</div>
+<h3 id="N20844">Status Code404-text/html; charset=UTF-8(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source:
+                <a href="" />
+</em>
+</p>
+<pre />
+</div>
+<h3 id="N20861">Status Code200-application/json; charset=utf-8(<abbr title="{http://www.bungie.net/Platform/Destiny/Vanguard/Grimoire/Definition/} Response">def:Response</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source:
+                <a href="" />
+</em>
+</p>
+<pre />
+</div>
+<h3 id="N2086A">Status Code404-text/html; charset=UTF-8(<abbr title="{http://wadl.dev.java.net/2009/02} ">html</abbr>)</h3>
+<div class="representation">
+<h6>XML Schema</h6>
+<p>
+<em>Source:
+                <a href="" />
+</em>
+</p>
+<pre />
+</div>
+<h3 id="N208B3">Status Code200-application/json; charset=utf-8<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+<h3 id="N208BA">Status Code404-text/html; charset=UTF-8<abbr title="{http://wadl.dev.java.net/2009/02} " />
+</h3>
+</body>
+</html>
